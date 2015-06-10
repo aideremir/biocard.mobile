@@ -1,7 +1,7 @@
 module.controller('trackingController', function ($scope, $http) {
     ons.ready(function () {
 
-        modal.show();
+
 
 
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -48,8 +48,27 @@ module.controller('trackingController', function ($scope, $http) {
 
             });
             */
+        }, function (error) {
+            console.log(error);
+
+            ons.notification.alert({
+                //message: 'Error loading data',
+                messageHTML: error,
+                title: 'Geolocation error',
+                buttonLabel: 'OK',
+                animation: 'default', // or 'none'
+                // modifier: 'optional-modifier'
+                callback: function () {
+                    // Alert button is closed!
+                }
+            });
+
+            modal.hide();
+        })
 
 
+
+        modal.show();
             // orders list
             var xml = '<?xml version="1.0" encoding="UTF-8" ?>' +
                 '<statusreq>' +
@@ -60,15 +79,6 @@ module.controller('trackingController', function ($scope, $http) {
                 '<done>ONLY_NOT_DONE</done>' +
                 '</statusreq>';
 
-
-            /*
-             var request = {
-             method: 'POST',
-             url: biocard.apiLink,
-             headers: { "Content-Type": 'application/xml' },
-             data: xml
-             }
-             */
 
             $http.post(biocard.apiLink, xml).
                 success(function (data, status, headers, config) {
@@ -109,33 +119,19 @@ module.controller('trackingController', function ($scope, $http) {
 
 
                     $scope.orders = orders;
+                    modal.hide();
 
 
                 }).
                 error(function (data, status, headers, config) {
                     console.log(error);
+                    modal.hide();
                 });
 
 
-            modal.hide();
 
-        }, function (error) {
-            console.log(error);
 
-            ons.notification.alert({
-                //message: 'Error loading data',
-                messageHTML: 'Geolocation error',
-                title: 'Geolocation error',
-                buttonLabel: 'OK',
-                animation: 'default', // or 'none'
-                // modifier: 'optional-modifier'
-                callback: function () {
-                    // Alert button is closed!
-                }
-            });
 
-            modal.hide();
-        })
 
 
     });
