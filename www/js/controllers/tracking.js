@@ -53,8 +53,8 @@ module.controller('trackingController', function ($scope, $http) {
 
             ons.notification.alert({
                 //message: 'Error loading data',
-                messageHTML: error,
-                title: 'Geolocation error',
+                messageHTML: error.message,
+                title: error.code,
                 buttonLabel: 'OK',
                 animation: 'default', // or 'none'
                 // modifier: 'optional-modifier'
