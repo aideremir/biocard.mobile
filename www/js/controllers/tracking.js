@@ -6,9 +6,24 @@ module.controller('trackingController', function ($scope, $http) {
 
         navigator.geolocation.getCurrentPosition(function (position) {
 
+
             var lat = position.coords.latitude,
-                lon = position.coords.longitude,
-                latLon = new plugin.google.maps.LatLng(lat, lon),
+                lon = position.coords.longitude;
+
+            ons.notification.alert({
+                //message: 'Error loading data',
+                messageHTML: lat + ', ' + lon,
+                title: 'Geolocation result',
+                buttonLabel: 'OK',
+                animation: 'default', // or 'none'
+                // modifier: 'optional-modifier'
+                callback: function () {
+                    // Alert button is closed!
+                }
+            });
+
+            /*
+            var latLon = new plugin.google.maps.LatLng(lat, lon),
                 bounds = new plugin.google.maps.LatLngBounds(latLon);
 
 
@@ -32,6 +47,7 @@ module.controller('trackingController', function ($scope, $http) {
                 })
 
             });
+            */
 
 
             // orders list
