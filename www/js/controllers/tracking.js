@@ -106,6 +106,18 @@ module.controller('trackingController', function ($scope, $http) {
         }, function (error) {
             console.log(error);
 
+            ons.notification.alert({
+                //message: 'Error loading data',
+                messageHTML: 'Geolocation error',
+                title: 'Geolocation error',
+                buttonLabel: 'OK',
+                animation: 'default', // or 'none'
+                // modifier: 'optional-modifier'
+                callback: function () {
+                    // Alert button is closed!
+                }
+            });
+
             modal.hide();
         })
 
