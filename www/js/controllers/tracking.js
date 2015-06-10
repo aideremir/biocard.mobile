@@ -4,7 +4,8 @@ module.controller('trackingController', function ($scope, $http) {
 
 
 
-        navigator.geolocation.getCurrentPosition(function (position) {
+        navigator.geolocation.getCurrentPosition(function (position)
+        {
 
 
             var lat = position.coords.latitude,
@@ -48,8 +49,9 @@ module.controller('trackingController', function ($scope, $http) {
 
             });
             */
-        }, function (error) {
-            console.log(error);
+        },
+
+            function (error) {
 
             ons.notification.alert({
                 //message: 'Error loading data',
@@ -64,7 +66,8 @@ module.controller('trackingController', function ($scope, $http) {
             });
 
             modal.hide();
-        })
+        },
+        { timeout: 31000, enableHighAccuracy: true, maximumAge: 90000 })
 
 
 
