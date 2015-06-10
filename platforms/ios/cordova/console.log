@@ -12,3 +12,4 @@ To disable web storage backup to iCloud, set the BackupWebStorage preference to 
 
 2015-06-10 12:50:29.199 Hello World[52496:3733117] Resetting plugins due to page load.
 2015-06-10 12:50:29.873 Hello World[52496:3733117] Finished load of: file:///Users/administrator/Library/Developer/CoreSimulator/Devices/29F0B07E-2E74-4CAD-8EF4-51D62F5EF5FE/data/Containers/Bundle/Application/60DA68E4-A781-418B-A53F-EB23F48BA918/Hello%20World.app/www/index.html
+2015-06-10 14:10:21.012 Hello World[52496:3780485] Terminating since there is no system app.

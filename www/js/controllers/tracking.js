@@ -8,27 +8,28 @@ module.controller('trackingController', function ($scope, $http) {
 
             var lat = position.coords.latitude,
                 lon = position.coords.longitude,
-                latLon = new google.maps.LatLng(lat, lon),
-                bounds = new google.maps.LatLngBounds(latLon);
+                latLon = new plugin.google.maps.LatLng(lat, lon),
+                bounds = new plugin.google.maps.LatLngBounds(latLon);
 
-            window.map = new google.maps.Map(document.getElementById('googleMap'), {
+
+            window.map = new plugin.google.maps.Map.getMap(document.getElementById('googleMap'), {
                 center: latLon,
-                zoom: 16,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
+                zoom: 16
             });
 
-
-            google.maps.event.addListenerOnce(window.map, 'idle', function () {
+            map.addEventListener(plugin.google.maps.event.MAP_READY, function () {
                 //map loaded fully
 
-
-                myMarker = new google.maps.Marker({
+                map.addMarker({
                     position: latLon,
                     title: 'I am here',
-                    map: window.map,
-                    icon: 'http://www.google.com/intl/en_us/mapfiles/ms/micons/green-dot.png',
+                    icon: 'blue',
                     draggable: false
-                });
+                }, function (marker) {
+
+                    marker.showInfoWindow();
+
+                })
 
             });
 
@@ -45,13 +46,13 @@ module.controller('trackingController', function ($scope, $http) {
 
 
             /*
-            var request = {
-                method: 'POST',
-                url: biocard.apiLink,
-                headers: { "Content-Type": 'application/xml' },
-                data: xml
-            }
-            */
+             var request = {
+             method: 'POST',
+             url: biocard.apiLink,
+             headers: { "Content-Type": 'application/xml' },
+             data: xml
+             }
+             */
 
             $http.post(biocard.apiLink, xml).
                 success(function (data, status, headers, config) {
@@ -94,12 +95,10 @@ module.controller('trackingController', function ($scope, $http) {
                     $scope.orders = orders;
 
 
-
                 }).
                 error(function (data, status, headers, config) {
                     console.log(error);
                 });
-
 
 
             modal.hide();
@@ -109,9 +108,6 @@ module.controller('trackingController', function ($scope, $http) {
 
             modal.hide();
         })
-
-
-
 
 
     });

@@ -178,5 +178,24 @@
         <string>{768, 1024}</string>
       </dict>
     </array>
+    <key>Google Maps API Key</key>
+    <string>AIzaSyC0sKDUQYZYCQH6jbsK-wNOfFHweD3ETWQ</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string></string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Trace your location on the map</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>com.phonegap.helloworld</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.phonegap.helloworld</string>
+        </array>
+      </dict>
+    </array>
   </dict>
 </plist>
