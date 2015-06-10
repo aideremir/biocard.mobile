@@ -66,8 +66,7 @@ module.controller('trackingController', function ($scope, $http) {
             });
 
             modal.hide();
-        },
-        { timeout: 31000, enableHighAccuracy: true, maximumAge: 90000 })
+        })
 
 
 
