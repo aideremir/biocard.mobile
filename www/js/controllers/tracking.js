@@ -2,72 +2,18 @@ module.controller('trackingController', function ($scope, $http) {
     ons.ready(function () {
 
 
-        navigator.geolocation.getCurrentPosition(function (position) {
+        var lat = 55.916667,
+            lon = 38,
+            latLon = new google.maps.LatLng(lat, lon),
+            bounds = new google.maps.LatLngBounds(latLon);
+
+        var map = new google.maps.Map(document.getElementById('googleMap'), {
+            center: latLon,
+            zoom: 16,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
 
 
-                var lat = position.coords.latitude,
-                    lon = position.coords.longitude;
-
-                ons.notification.alert({
-                    //message: 'Error loading data',
-                    messageHTML: lat + ', ' + lon,
-                    title: 'Geolocation result',
-                    buttonLabel: 'OK',
-                    animation: 'default', // or 'none'
-                    // modifier: 'optional-modifier'
-                    callback: function () {
-                        // Alert button is closed!
-                    }
-                });
-
-                /*
-                 var latLon = new plugin.google.maps.LatLng(lat, lon),
-                 bounds = new plugin.google.maps.LatLngBounds(latLon);
-
-
-                 window.map = new plugin.google.maps.Map.getMap(document.getElementById('googleMap'), {
-                 center: latLon,
-                 zoom: 16
-                 });
-
-                 map.addEventListener(plugin.google.maps.event.MAP_READY, function () {
-                 //map loaded fully
-
-                 map.addMarker({
-                 position: latLon,
-                 title: 'I am here',
-                 icon: 'blue',
-                 draggable: false
-                 }, function (marker) {
-
-                 marker.showInfoWindow();
-
-                 })
-
-                 });
-                 */
-            },
-
-            function (error) {
-
-                ons.notification.alert({
-                    //message: 'Error loading data',
-                    messageHTML: error.message,
-                    title: error.code,
-                    buttonLabel: 'OK',
-                    animation: 'default', // or 'none'
-                    // modifier: 'optional-modifier'
-                    callback: function () {
-                        // Alert button is closed!
-                    }
-                });
-
-                modal.hide();
-            }, {
-                enableHighAccuracy: true,
-                timeout: 10000
-            }
-        )
 
 
         modal.show();
