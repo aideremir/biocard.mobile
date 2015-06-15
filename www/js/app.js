@@ -38,6 +38,11 @@ var biocard = {
     }
 };
 
+document.addEventListener("backbutton", function()
+{
+    return false;
+}, false);
+
 module.controller('appController', function ($scope) {
 
     //document.body.style.marginTop = "20px";
