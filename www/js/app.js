@@ -38,10 +38,7 @@ var biocard = {
     }
 };
 
-document.addEventListener("backbutton", function()
-{
-    return false;
-}, false);
+
 
 module.controller('appController', function ($scope) {
 
@@ -51,6 +48,8 @@ module.controller('appController', function ($scope) {
 
 
     ons.ready(function () {
+
+        navigator.getDeviceBackButtonHandler().setListener(function(event) {});
 
         menu.logout = function () {
             biocard.login = null;
