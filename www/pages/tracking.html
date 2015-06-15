@@ -49,24 +49,24 @@
 		<div class="button-bar" style="width: 100%">
 			<div class="button-bar__item">
 				<input type="radio" name="segment-a" ng-checked="!show" ng-click="show=!show">
-				<button class="button-bar__button">List</button>
+				<button class="button-bar__button">Map</button>
 			</div>
 
 			<div class="button-bar__item">
 				<input type="radio" name="segment-a" ng-checked="show" ng-click="show=!show">
-				<button class="button-bar__button">Map</button>
+				<button class="button-bar__button">List</button>
 			</div>
 		</div>
 	</div>
 
 	<div style="position: absolute; top: 47px; left: 0; right: 0; bottom: 0;">
 
-		<div id="tracking-map" ng-show="show">
+		<div id="tracking-map" ng-show="!show">
 			<div class="wrap" id="googleMap" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1">
 
 			</div>
 		</div>
-		<div id="tracking-list" ng-show="!show">
+		<div id="tracking-list" ng-show="show">
 			<ons-list>
 				<ons-list-item ng-repeat="order in orders" modifier="chevron" class="list-item-container" ng-click="nav.pushPage('pages/orderDetails.html', { animation: 'slide', order: order })">
 					<ons-row>
