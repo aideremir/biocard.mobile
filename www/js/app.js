@@ -49,7 +49,7 @@ module.controller('appController', function ($scope) {
 
     ons.ready(function () {
 
-        navigator.getDeviceBackButtonHandler().setListener(function(event) {});
+        //navigator.getDeviceBackButtonHandler().setListener(function(event) {});
 
         menu.logout = function () {
             biocard.login = null;
