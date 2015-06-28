@@ -8,5 +8,22 @@
 		<div class="center">Customs</div>
 	</ons-toolbar>
 
+	<ons-list>
+		<ons-list-item ng-repeat="order in projects" modifier="chevron" class="list-item-container" ng-click="nav.pushPage('pages/customsDetails.html', { animation: 'slide', order: order })">
+			<ons-row>
+				<ons-col>
+					<div class="name">
+						{{ order.awb }} <span class="company" style="opacity: 0.5">{{ order.clearance_status }}</span>
+					</div>
+
+					<div class="desc">
+						{{ order.project }}
+					</div>
+				</ons-col>
+				<ons-col width="40px"></ons-col>
+			</ons-row>
+		</ons-list-item>
+
+	</ons-list>
 
 </ons-page>

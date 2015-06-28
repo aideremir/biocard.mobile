@@ -1,4 +1,4 @@
-<ons-page ng-controller="customsController">
+<ons-page ng-controller="regulatoryController">
 	<ons-toolbar>
 		<div class="left">
 			<ons-toolbar-button ng-click="menu.toggleMenu()">
@@ -7,6 +7,24 @@
 		</div>
 		<div class="center">Regulatory</div>
 	</ons-toolbar>
+
+	<ons-list>
+		<ons-list-item ng-repeat="order in projects" modifier="chevron" class="list-item-container" ng-click="nav.pushPage('pages/regulatoryDetails.html', { animation: 'slide', order: order })">
+			<ons-row>
+				<ons-col>
+					<div class="name">
+						{{ order.project }} <span class="company" style="opacity: 0.5">{{ order.company }}</span>
+					</div>
+
+					<!--div class="desc">
+						{{ order.project }}
+					</div-->
+				</ons-col>
+				<ons-col width="40px"></ons-col>
+			</ons-row>
+		</ons-list-item>
+
+	</ons-list>
 
 
 </ons-page>

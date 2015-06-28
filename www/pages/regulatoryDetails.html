@@ -1,0 +1,43 @@
+<style>
+	.propsList ons-icon {
+		width: 25px;
+		opacity: 0.3;
+	}
+</style>
+<ons-page ng-controller="orderDetailsController">
+	<ons-toolbar>
+		<div class="left">
+			<ons-toolbar-button ng-click="nav.popPage()">
+				<ons-icon icon="fa-chevron-left"></ons-icon>
+			</ons-toolbar-button>
+		</div>
+		<div class="center">{{ order.project }}</div>
+	</ons-toolbar>
+
+
+
+	<ons-list class="propsList">
+		<ons-list-item ng-show="order.company">
+			<label>Company</label>
+			 {{ order.company }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.project">
+			<label>Project</label>
+			 {{ order.project }}
+		</ons-list-item>
+
+		<ons-list-item ng-show="order.description">
+			<label>Description</label>
+			 {{ order.description }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.doc_submission">
+			<label>Documents submission</label>
+			{{ order.doc_submission }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.doc_received">
+			<label>Documents received</label>
+			{{ order.doc_received }}
+		</ons-list-item>
+
+	</ons-list>
+</ons-page>

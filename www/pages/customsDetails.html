@@ -1,0 +1,65 @@
+<style>
+	.propsList ons-icon {
+		width: 25px;
+		opacity: 0.3;
+	}
+</style>
+<ons-page ng-controller="orderDetailsController">
+	<ons-toolbar>
+		<div class="left">
+			<ons-toolbar-button ng-click="nav.popPage()">
+				<ons-icon icon="fa-chevron-left"></ons-icon>
+			</ons-toolbar-button>
+		</div>
+		<div class="center">{{ order.awb }}</div>
+	</ons-toolbar>
+
+
+
+	<ons-list class="propsList">
+		<ons-list-item ng-show="order.company">
+			<label>Company</label>
+			 {{ order.company }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.project">
+			<label>Project</label>
+			 {{ order.project }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.awb">
+			<label>AWB</label>
+			 {{ order.awb }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.notes">
+			<label>Notes</label>
+			 {{ order.notes }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.import_export">
+			<label>Import/Export</label>
+			 {{ order.import_export }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.description">
+			<label>Description</label>
+			 {{ order.description }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.temperature">
+			<label>Temperature</label>
+			 {{ order.temperature }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.date_of_arrival">
+			<label>Arrival Date</label>
+			 {{ order.date_of_arrival }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.start_of_customs_clearance">
+			<label>Custom clearance start</label>
+			 {{ order.start_of_customs_clearance }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.end_date_expected">
+			<label>End date expected</label>
+			 {{ order.end_date_expected }}
+		</ons-list-item>
+		<ons-list-item ng-show="order.clearance_status">
+			<label>Clearance status</label>
+			 {{ order.clearance_status }}
+		</ons-list-item>
+	</ons-list>
+</ons-page>

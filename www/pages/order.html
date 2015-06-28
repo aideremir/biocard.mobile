@@ -28,6 +28,7 @@
 	<div ng-show="tabs.receiver">
 		<ul class="list">
 			<li class="list__item">
+
 				<input type="text" class="text-input text-input--transparent" placeholder="Company" ng-model="order.company" value="" style="width:100%">
 			</li>
 			<li class="list__item">
@@ -43,12 +44,15 @@
 				<textarea class="textarea textarea--transparent" rows="4" placeholder="Address" ng-model="order.address"></textarea>
 			</li>
 			<li class="list__item">
+				<label class="small">Date</label>
 				<input type="date" class="text-input text-input--transparent" placeholder="Date" ng-model="order.date" value="" style="width:100%">
 			</li>
 			<li class="list__item">
+				<label class="small">Time min</label>
 				<input type="time" class="text-input text-input--transparent" placeholder="Time min" ng-model="order.timeMin" value="" style="width:100%">
 			</li>
 			<li class="list__item">
+				<label class="small">Time max</label>
 				<input type="time" class="text-input text-input--transparent" placeholder="Time max" ng-model="order.timeMax" value="" style="width:100%">
 			</li>
 		</ul>
@@ -69,6 +73,7 @@
 				<input type="text" class="text-input text-input--transparent" placeholder="Attachment" ng-model="order.attach" style="width:100%">
 			</li>
 			<li class="list__item">
+				<label class="small">Date</label>
 				<input type="date" class="text-input text-input--transparent" placeholder="Receive date" ng-model="order.receiveDate" style="width:100%">
 			</li>
 			<li class="list__item">
