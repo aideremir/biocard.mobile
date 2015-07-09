@@ -37,7 +37,9 @@ module.controller('trackingController', function ($scope, $http) {
 
 
                     if (lat != '' && lon != '') {
-                        //console.log(lat);
+
+                        lat = parseFloat(lat);
+                        lon = parseFloat(lon);
 
                         var marker = new google.maps.Marker({
                             position: {lat: lat, lng: lon},
@@ -98,7 +100,7 @@ module.controller('trackingController', function ($scope, $http) {
         $http.post(biocard.apiLink, xml).
             success(function (data, status, headers, config) {
 
-                //console.log(data);
+                console.log(data);
 
                 var $orders = $(data).find('order'), orders = [];
 
