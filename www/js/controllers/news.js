@@ -5,7 +5,7 @@ module.controller('newsController', ['$scope', '$sce', function($scope, $sce) {
         $scope.isFetching = true;
         modal.show();
 
-        $.get('http://biocard.com/api/news',function (data) {
+        $.get('http://cabinet.biocard.com/api/news',function (data) {
 
             var $feed = $(data), content = '', newsList = [];
 
