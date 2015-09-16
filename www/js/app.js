@@ -2,7 +2,7 @@ var module = ons.bootstrap('biocardApp', ['onsen']);
 
 var biocard = {
 
-    apiLink: 'http://biocard.com/api/courierexe',
+    apiLink: 'http://cabinet.biocard.com/api/courierexe',
     extra: '13',
     login: '',
     password: '',
