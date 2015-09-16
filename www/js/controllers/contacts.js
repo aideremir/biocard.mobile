@@ -9,7 +9,7 @@ module.controller('contactsController', function ($scope, $http) {
 
         $scope.send = function()
         {
-            $http.post('http://biocard.com/api/feedback', {email: $scope.email, phone: $scope.phone, message: $scope.message}).
+            $http.post('http://cabinet.biocard.com/api/feedback', {email: $scope.email, phone: $scope.phone, message: $scope.message}).
                 success(function (data, status, headers, config) {
 
                     message = 'Message sent! Thank you!';
