@@ -6,7 +6,7 @@ module.controller('customsController', function ($scope, $http) {
     ons.ready(function () {
 
         modal.show();
-        $http.get('http://biocard.com/api/customs?courierLogin=' + biocard.login + '&courierPassword=' + biocard.password).
+        $http.get('http://cabinet.biocard.com/api/customs?courierLogin=' + biocard.login + '&courierPassword=' + biocard.password).
             success(function (data, status) {
 
                 //console.log(data);
