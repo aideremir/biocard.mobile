@@ -44,8 +44,8 @@ module.controller('appController', function ($scope) {
 
     //document.body.style.marginTop = "20px";
 
-    //$scope.startPage = biocard.auth() ? 'pages/dashboard.html' : 'pages/login.html';
-    $scope.startPage =  'pages/dashboard.html'; // TODO: REMOVE b4 deploy!!!!!!!!!
+    $scope.startPage = biocard.auth() ? 'pages/dashboard.html' : 'pages/login.html';
+    ///$scope.startPage =  'pages/dashboard.html'; // TODO: REMOVE b4 deploy!!!!!!!!!
 
 
     ons.ready(function () {
