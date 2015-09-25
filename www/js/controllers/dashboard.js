@@ -4,9 +4,11 @@
 /**
  * Created by administrator on 27.04.15.
  */
-module.controller('settingsController', function ($scope) {
+module.controller('dashboardController', function ($scope) {
 
     ons.ready(function () {
+
+        $scope.login = biocard.login;
 
     });
 });
