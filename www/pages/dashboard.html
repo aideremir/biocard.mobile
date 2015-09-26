@@ -20,11 +20,21 @@
 				<ons-icon icon="fa-bars"></ons-icon>
 			</ons-toolbar-button>
 		</div>
-		<div class="center">Welcome, {{ login }}!</div>
+		<div class="center">
+			<img src="img/logo.svg" style="width: 58%">
+
+		</div>
 	</ons-toolbar>
 
-	<ons-list>
-
+	<ons-list style="margin-top: 20px;">
+		<ons-list-item style="background: url(img/regulatory.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px"  onclick="menu.setMainPage('pages/regulatory.html', {closeMenu: true})">
+			<div class="overlay"></div>
+			<span>Regulatory</span>
+		</ons-list-item>
+		<ons-list-item style="background: url(img/customs.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/customs.html', {closeMenu: true})">
+			<div class="overlay"></div>
+			<span>Customs</span>
+		</ons-list-item>
 		<ons-list-item style="color: #FFF; background: url(img/tracking.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/tracking.html', {closeMenu: true})">
 			<!--ons-icon icon="ion-ios-location" size="18px"></ons-icon-->
 			<div class="overlay"></div>
@@ -35,14 +45,8 @@
 			<div class="overlay"></div>
 			<span>Calculator</span>
 		</ons-list-item>
-		<ons-list-item style="background: url(img/customs.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/customs.html', {closeMenu: true})">
-			<div class="overlay"></div>
-			<span>Customs</span>
-		</ons-list-item>
-		<ons-list-item style="background: url(img/regulatory.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px"  onclick="menu.setMainPage('pages/regulatory.html', {closeMenu: true})">
-			<div class="overlay"></div>
-			<span>Regulatory</span>
-		</ons-list-item>
+
+
 
 		<ons-list-item style="background: url(img/news.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px"  onclick="menu.setMainPage('pages/news.html', {closeMenu: true})">
 			<!--ons-icon icon="ion-ios-paper-outline" size="18px"></ons-icon-->

@@ -43,7 +43,7 @@ module.controller('loginController', function ($scope, $http) {
                             biocard.login = login;
                             biocard.password = password;
 
-                            menu.setMainPage('pages/tracking.html', {closeMenu: true});
+                            menu.setMainPage('pages/dashboard.html', {closeMenu: true});
 
                         }
 
