@@ -16,17 +16,13 @@ module.controller('loginController', function ($scope, $http) {
 
                 modal.show();
 
-                var xml = '<itemlist>' +
-                    '<auth extra="' + biocard.extra + '" login="' + login + '" pass="' + password + '" />' +
-                    '</itemlist>';
 
-
-                $http.post(biocard.apiLink, xml).
+                $http.get('http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password).
                     success(function (data, status, headers, config) {
 
-                        var $error = $(data).find('error');
+                        var error = data.error;
 
-                        if ($error.length > 0) {
+                        if (error != undefined) {
 
                             ons.notification.alert({
                                 message: 'Wrong login or password',
@@ -39,9 +35,11 @@ module.controller('loginController', function ($scope, $http) {
 
                             localStorage.setItem('login', login);
                             localStorage.setItem('password', password);
+                            localStorage.setItem('name', data.name);
 
                             biocard.login = login;
                             biocard.password = password;
+                            biocard.name = data.name;
 
                             menu.setMainPage('pages/dashboard.html', {closeMenu: true});
 

@@ -21,13 +21,23 @@
 			</ons-toolbar-button>
 		</div>
 		<div class="center">
-			<img src="img/logo.svg" style="width: 58%">
+			<img src="img/logo.svg" style="width: 48%">
 
+			<div style="
+    padding: 0;
+    /* height: 0; */
+    margin: 0;
+    line-height: 19px;
+    font-size: 10px;
+    position: relative;
+    top: -27px;
+">Welcome, {{userName}}!
+			</div>
 		</div>
 	</ons-toolbar>
 
 	<ons-list>
-		<ons-list-item style="background: url(img/regulatory.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px"  onclick="menu.setMainPage('pages/regulatory.html', {closeMenu: true})">
+		<ons-list-item style="background: url(img/regulatory.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/regulatory.html', {closeMenu: true})">
 			<div class="overlay"></div>
 			<span>Regulatory</span>
 		</ons-list-item>
@@ -36,24 +46,29 @@
 			<span>Customs</span>
 		</ons-list-item>
 		<ons-list-item style="color: #FFF; background: url(img/tracking.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/tracking.html', {closeMenu: true})">
-			<!--ons-icon icon="ion-ios-location" size="18px"></ons-icon-->
+
 			<div class="overlay"></div>
 			<span>Tracking</span>
 		</ons-list-item>
 
-		<ons-list-item style="background: url(img/calc.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px"  onclick="menu.setMainPage('pages/calculator.html', {closeMenu: true})">
+		<ons-list-item style="color: #FFF; background: url(img/delivery-van.png) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="nav.pushPage('pages/order.html', {animation: 'slide'})">
+
+			<div class="overlay"></div>
+			<span>Delivery Request</span>
+		</ons-list-item>
+
+		<ons-list-item style="background: url(img/calc.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/calculator.html', {closeMenu: true})">
 			<div class="overlay"></div>
 			<span>Calculator</span>
 		</ons-list-item>
 
 
-
-		<ons-list-item style="background: url(img/news.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px"  onclick="menu.setMainPage('pages/news.html', {closeMenu: true})">
+		<ons-list-item style="background: url(img/news.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/news.html', {closeMenu: true})">
 			<!--ons-icon icon="ion-ios-paper-outline" size="18px"></ons-icon-->
 			<div class="overlay"></div>
 			<span>News</span>
 		</ons-list-item>
-		<ons-list-item style="background: url(img/feedback.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px"  onclick="menu.setMainPage('pages/contacts.html', {closeMenu: true})">
+		<ons-list-item style="background: url(img/feedback.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/contacts.html', {closeMenu: true})">
 			<div class="overlay"></div>
 			<span>Contacts</span>
 		</ons-list-item>
@@ -61,9 +76,7 @@
 			Settings
 		</ons-list-item-->
 
-		<ons-list-item modifier="chevron" onclick="menu.logout()">
-			Logout
-		</ons-list-item>
+
 	</ons-list>
 
 </ons-page>

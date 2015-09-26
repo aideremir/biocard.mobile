@@ -1,29 +1,40 @@
+<style>
+	.ons-icon--ion {
+		vertical-align: 1%;
+
+		width: 15px;
+	}
+</style>
 <ons-list>
 
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/dashboard.html', {closeMenu: true})">
-		<!--ons-icon icon="ion-ios-location" size="18px"></ons-icon-->
+		<ons-icon icon="ion-ios-home-outline" size="18px"></ons-icon>
 		Home
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/tracking.html', {closeMenu: true})">
-		<!--ons-icon icon="ion-ios-location" size="18px"></ons-icon-->
+		<ons-icon icon="ion-ios-location-outline" size="18px"></ons-icon>
 		Tracking
 	</ons-list-item>
 
 
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/calculator.html', {closeMenu: true})">
+		<ons-icon icon="ion-ios-calculator-outline" size="18px"></ons-icon>
 		Calculator
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/customs.html', {closeMenu: true})">
+		<ons-icon icon="ion-ios-briefcase-outline" size="18px"></ons-icon>
 		Customs
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/regulatory.html', {closeMenu: true})">
+		<ons-icon icon="ion-ios-book-outline" size="18px"></ons-icon>
 		Regulatory
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/news.html', {closeMenu: true})">
-		<!--ons-icon icon="ion-ios-paper-outline" size="18px"></ons-icon-->
+		<ons-icon icon="ion-ios-paper-outline" size="18px"></ons-icon>
 		News
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/contacts.html', {closeMenu: true})">
+		<ons-icon icon="ion-ios-telephone-outline" size="18px"></ons-icon>
 		Contacts
 	</ons-list-item>
 	<!--ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/settings.html', {closeMenu: true})">
@@ -31,6 +42,7 @@
 	</ons-list-item-->
 
 	<ons-list-item modifier="chevron" onclick="menu.logout()">
+		<ons-icon icon="ion-ios-unlocked-outline" size="18px"></ons-icon>
 		Logout
 	</ons-list-item>
 </ons-list>

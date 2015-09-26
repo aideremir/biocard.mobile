@@ -11,6 +11,7 @@ var biocard = {
 
         this.login = localStorage.getItem('login');
         this.password = localStorage.getItem('password');
+        this.name = localStorage.getItem('name');
 
         return (this.login && this.password);
 
