@@ -16,7 +16,7 @@ module.controller('customsMonitorController', function ($scope, $http) {
 
             }).
             error(function (data, status, headers, config) {
-                console.log(error);
+                console.log(data);
                 modal.hide();
             });
 
