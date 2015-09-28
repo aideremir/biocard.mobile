@@ -12,6 +12,7 @@ var biocard = {
         this.login = localStorage.getItem('login');
         this.password = localStorage.getItem('password');
         this.name = localStorage.getItem('name');
+        this.company = localStorage.getItem('company');
 
         return (this.login && this.password);
 
@@ -59,6 +60,8 @@ module.controller('appController', function ($scope) {
 
             localStorage.removeItem('login');
             localStorage.removeItem('password');
+            localStorage.removeItem('name');
+            localStorage.removeItem('company');
 
             menu.setMainPage('pages/login.html', {closeMenu: true});
         }

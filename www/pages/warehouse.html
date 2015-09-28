@@ -1,0 +1,24 @@
+<ons-page id="warehouse" ng-controller="warehouseController">
+	<ons-toolbar>
+		<div class="left">
+			<ons-toolbar-button ng-click="menu.toggleMenu()">
+				<ons-icon icon="fa-bars"></ons-icon>
+			</ons-toolbar-button>
+		</div>
+		<div class="center">Warehouse</div>
+	</ons-toolbar>
+
+	<ons-list>
+		<ons-list-item ng-repeat="order in projects" modifier="chevron" class="list-item-container" ng-click="nav.pushPage('pages/warehouseDetails.html', { animation: 'slide', order: order })">
+			<ons-row>
+				<ons-col>
+					<div class="name">
+						{{ order.name }}
+					</div>
+				</ons-col>
+				<ons-col width="40px"></ons-col>
+			</ons-row>
+		</ons-list-item>
+
+	</ons-list>
+</ons-page>

@@ -36,10 +36,12 @@ module.controller('loginController', function ($scope, $http) {
                             localStorage.setItem('login', login);
                             localStorage.setItem('password', password);
                             localStorage.setItem('name', data.name);
+                            localStorage.setItem('company', data.company);
 
                             biocard.login = login;
                             biocard.password = password;
                             biocard.name = data.name;
+                            biocard.company = data.company;
 
                             menu.setMainPage('pages/dashboard.html', {closeMenu: true});
 
