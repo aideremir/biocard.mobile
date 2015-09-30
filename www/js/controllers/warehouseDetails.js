@@ -12,6 +12,32 @@ module.controller('warehouseDetailsController', function ($scope, $http) {
 
         $scope.order = order;
 
+
+        $scope.searchMatch =  function(query, object) //@todo: move all that shit to app scope!
+        {
+
+            if(!query)
+            {
+                return true;
+            }
+
+            var searchPattern = new RegExp('^' + query, 'i');
+
+            for(var index in object) {
+                if (object.hasOwnProperty(index)) {
+                    var attr = object[index];
+                }
+
+                if(searchPattern.test(attr)){
+                    return true;
+                }
+            }
+
+
+            return false;
+        }
+
+
         modal.show();
         $http.get('http://cabinet.biocard.com/api/warehouse?studyId=' + order.studyId).
             success(function (data, status) {

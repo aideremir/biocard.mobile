@@ -47,13 +47,15 @@
 		</div>
 	</div>
 
-	<div style="padding: 10px">
-		<input type="search" class="search-input" placeholder="Search..." >
-	</div>
+
 
 	<div ng-show="tabs.received">
-		<ul class="list list--inset" ng-repeat="order in projects.Received" style="margin-bottom: 10px">
-			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryReceived" type="search" class="search-input" placeholder="Search..." >
+		</div>
+
+		<ul ng-show="searchMatch(searchQueryReceived, order)" class="list list--inset" ng-repeat="order in projects.Received" style="margin-bottom: 10px">
+			<li  ng-repeat="(key, value) in order" class="list__item list__item--inset">
 				<label class="small">{{ key }}</label>
 					{{ value }}
 			</li>
@@ -61,7 +63,10 @@
 
 	</div>
 	<div ng-show="tabs.stock">
-		<ul class="list list--inset" ng-repeat="order in projects.Stock" style="margin-bottom: 10px">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryStock" type="search" class="search-input" placeholder="Search..." >
+		</div>
+		<ul ng-show="searchMatch(searchQueryStock, order)" class="list list--inset" ng-repeat="order in projects.Stock" style="margin-bottom: 10px">
 			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
 				<label class="small">{{ key }}</label>
 				{{ value }}
@@ -69,7 +74,10 @@
 		</ul>
 	</div>
 	<div ng-show="tabs.relabel">
-		<ul class="list list--inset" ng-repeat="order in projects.ReLabelling" style="margin-bottom: 10px">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryRelabel" type="search" class="search-input" placeholder="Search..." >
+		</div>
+		<ul ng-show="searchMatch(searchQueryRelabel, order)" class="list list--inset" ng-repeat="order in projects.ReLabelling" style="margin-bottom: 10px">
 			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
 				<label class="small">{{ key }}</label>
 				{{ value }}
@@ -77,7 +85,10 @@
 		</ul>
 	</div>
 	<div ng-show="tabs.dispatch">
-		<ul class="list list--inset" ng-repeat="order in projects.Dispatch" style="margin-bottom: 10px">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryDispatch" type="search" class="search-input" placeholder="Search..." >
+		</div>
+		<ul ng-show="searchMatch(searchQueryDispatch, order)" class="list list--inset" ng-repeat="order in projects.Dispatch" style="margin-bottom: 10px">
 			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
 				<label class="small">{{ key }}</label>
 				{{ value }}
@@ -85,7 +96,10 @@
 		</ul>
 	</div>
 	<div ng-show="tabs.return">
-		<ul class="list list--inset" ng-repeat="order in projects.Return" style="margin-bottom: 10px">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryReturn" type="search" class="search-input" placeholder="Search..." >
+		</div>
+		<ul ng-show="searchMatch(searchQueryReturn, order)" class="list list--inset" ng-repeat="order in projects.Return" style="margin-bottom: 10px">
 			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
 				<label class="small">{{ key }}</label>
 				{{ value }}
@@ -93,7 +107,10 @@
 		</ul>
 	</div>
 	<div ng-show="tabs.destructed">
-		<ul class="list list--inset" ng-repeat="order in projects.Destructed" style="margin-bottom: 10px">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryDestructed" type="search" class="search-input" placeholder="Search..." >
+		</div>
+		<ul ng-show="searchMatch(searchQueryDestructed, order)" class="list list--inset" ng-repeat="order in projects.Destructed" style="margin-bottom: 10px">
 			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
 				<label class="small">{{ key }}</label>
 				{{ value }}
