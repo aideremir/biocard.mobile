@@ -8,8 +8,12 @@
 		<div class="center">Customs</div>
 	</ons-toolbar>
 
+	<div style="padding: 10px">
+		<input ng-model="searchQuery" type="search" class="search-input" placeholder="Search..." >
+	</div>
+
 	<ons-list>
-		<ons-list-item ng-repeat="order in projects" modifier="chevron" class="list-item-container" ng-click="nav.pushPage('pages/customsDetails.html', { animation: 'slide', order: order })">
+		<ons-list-item ng-show="searchMatch(order.awb)" ng-repeat="order in projects" modifier="chevron" class="list-item-container" ng-click="nav.pushPage('pages/customsDetails.html', { animation: 'slide', order: order })">
 			<ons-row>
 				<ons-col>
 					<div class="name">

@@ -8,8 +8,12 @@
 		<div class="center">Online Customs</div>
 	</ons-toolbar>
 
+	<div style="padding: 10px">
+		<input ng-model="searchQuery" type="search" class="search-input" placeholder="Search..." >
+	</div>
+
 	<ons-list class="customs-monitor-list">
-		<ons-list-item ng-repeat="order in projects" modifier="chevron" ng-click="nav.pushPage('pages/customsMonitorDetails.html', { animation: 'slide', order: order })">
+		<ons-list-item ng-show="searchMatch(order.number)" ng-repeat="order in projects" modifier="chevron" ng-click="nav.pushPage('pages/customsMonitorDetails.html', { animation: 'slide', order: order })">
 
 			<label class="small">
 				Customcode: {{ order.customcode }} <span style="float:right; background-color:#{{ order.message.color }}">{{ order.message.text }}</span>

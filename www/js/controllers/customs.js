@@ -5,6 +5,20 @@ module.controller('customsController', function ($scope, $http) {
 
     ons.ready(function () {
 
+        $scope.searchMatch =  function(string) //@todo: move all that shit to app scope!
+        {
+            var query = $scope.searchQuery;
+
+            if(!query)
+            {
+                return true;
+            }
+
+            var searchPattern = new RegExp('^' + query, 'i');
+
+            return searchPattern.test(string);
+        }
+
         modal.show();
         $http.get('http://cabinet.biocard.com/api/customs?courierLogin=' + biocard.login + '&courierPassword=' + biocard.password).
             success(function (data, status) {
