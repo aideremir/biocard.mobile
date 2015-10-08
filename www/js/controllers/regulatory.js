@@ -32,7 +32,7 @@ module.controller('regulatoryController', function ($scope, $http) {
                 error(function (data, status, headers, config) {
 
                     ons.notification.alert({
-                        messageHTML: status,
+                        messageHTML: 'ERR_INTERNET_DISCONNECTED',
                         title: 'Error',
                         buttonLabel: 'OK',
                         animation: 'default'

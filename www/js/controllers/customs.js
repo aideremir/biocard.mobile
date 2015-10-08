@@ -33,7 +33,7 @@ module.controller('customsController', function ($scope, $http) {
                 console.log(data);
 
                 ons.notification.alert({
-                    messageHTML: status,
+                    messageHTML: 'ERR_INTERNET_DISCONNECTED',
                     title: 'Error',
                     buttonLabel: 'OK',
                     animation: 'default'
