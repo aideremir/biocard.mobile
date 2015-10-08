@@ -48,6 +48,14 @@ module.controller('orderController', function ($scope, $http) {
                 modal.hide();
             })
             .error(function (data, status, headers, config) {
+
+                ons.notification.alert({
+                    messageHTML: status,
+                    title: 'Error',
+                    buttonLabel: 'OK',
+                    animation: 'default'
+                });
+
                 modal.hide();
             })
 

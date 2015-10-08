@@ -51,21 +51,12 @@ module.controller('loginController', function ($scope, $http) {
                     }).
                     error(function (data, status, headers, config) {
 
-                        console.log(data);
-                        console.log(status);
-                        console.log(headers);
-                        console.log(config);
-
-
-                        /*
                         ons.notification.alert({
-                            message: data,
-                            title: status,
+                            messageHTML: status,
+                            title: 'Error',
                             buttonLabel: 'OK',
                             animation: 'default'
                         });
-                        */
-
 
                         modal.hide();
                     });

@@ -48,7 +48,14 @@ module.controller('warehouseDetailsController', function ($scope, $http) {
 
             }).
             error(function (data, status, headers, config) {
-                console.log(error);
+
+                ons.notification.alert({
+                    messageHTML: status,
+                    title: 'Error',
+                    buttonLabel: 'OK',
+                    animation: 'default'
+                });
+
                 modal.hide();
             });
 
