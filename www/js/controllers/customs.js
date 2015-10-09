@@ -3,8 +3,6 @@
  */
 module.controller('customsController', function ($scope, $http) {
 
-    ons.ready(function () {
-
         $scope.searchMatch =  function(string) //@todo: move all that shit to app scope!
         {
             var query = $scope.searchQuery;
@@ -20,6 +18,7 @@ module.controller('customsController', function ($scope, $http) {
         }
 
         modal.show();
+
         $http.get('http://cabinet.biocard.com/api/customs?courierLogin=' + biocard.login + '&courierPassword=' + biocard.password).
             success(function (data, status) {
 
@@ -42,5 +41,4 @@ module.controller('customsController', function ($scope, $http) {
                 modal.hide();
             });
 
-    });
 });

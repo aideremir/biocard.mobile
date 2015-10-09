@@ -6,7 +6,7 @@
  */
 module.controller('warehouseController', function ($scope, $http) {
 
-    ons.ready(function () {
+
 
         $scope.searchMatch =  function(string) //@todo: move all that shit to app scope!
         {
@@ -47,5 +47,5 @@ module.controller('warehouseController', function ($scope, $http) {
 
 
 
-    });
+
 });

@@ -53,7 +53,7 @@
 		Settings
 	</ons-list-item-->
 
-	<ons-list-item modifier="chevron" onclick="menu.logout()">
+	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/login.html', {closeMenu: true, callback: function(){biocard.login = null; biocard.password = null;localStorage.removeItem('login');localStorage.removeItem('password');localStorage.removeItem('name');localStorage.removeItem('company');}})">
 		<ons-icon icon="ion-ios-unlocked-outline" size="18px"></ons-icon>
 		Logout
 	</ons-list-item>

@@ -4,15 +4,18 @@
 /**
  * Created by administrator on 27.04.15.
  */
-module.controller('regulatoryDetailsController', function ($scope) {
+module.controller('regulatoryDetailsController', function ($scope, $http) {
 
-    ons.ready(function () {
+    var page = nav.getCurrentPage(), order = (page.options.order); //
 
-        var page = nav.getCurrentPage(), order = (page.options.order); //
+    $scope.order = order;
 
-        $scope.order = order;
+    console.log('test');
+    console.log(nav);
+    console.log(page);
+    console.log($scope);
 
 
 
-    });
+
 });

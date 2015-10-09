@@ -1,5 +1,5 @@
 module.controller('trackingController', function ($scope, $http) {
-    ons.ready(function () {
+    //ons.ready(function () {
 
         var getRandomArbitary = function (min, max) {
 
@@ -159,7 +159,7 @@ module.controller('trackingController', function ($scope, $http) {
             });
 
 
-    });
+    //});
 
 
 });

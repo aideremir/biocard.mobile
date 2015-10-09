@@ -4,62 +4,62 @@
 		opacity: 0.3;
 	}
 </style>
-<ons-page ng-controller="orderDetailsController">
+<ons-page ng-controller="customsDetailsController">
 	<ons-toolbar>
 		<div class="left">
 			<ons-toolbar-button ng-click="nav.popPage()">
 				<ons-icon icon="fa-chevron-left"></ons-icon>
 			</ons-toolbar-button>
 		</div>
-		<div class="center">{{ order.awb }}</div>
+		<div class="center">{{ project.awb }}</div>
 	</ons-toolbar>
 
 
 
 	<ons-list class="propsList">
-		<ons-list-item ng-show="order.company">
+		<ons-list-item ng-show="project.company">
 			<label>Company</label>
-			 {{ order.company }}
+			 {{ project.company }}
 		</ons-list-item>
-		<ons-list-item ng-show="order.project">
+		<ons-list-item ng-show="project.project">
 			<label>Project</label>
-			 {{ order.project }}
+			 {{ project.project }}
 		</ons-list-item>
-		<ons-list-item ng-show="order.awb">
+		<ons-list-item ng-show="project.awb">
 			<label>AWB</label>
-			 {{ order.awb }}
+			 {{ project.awb }}
 		</ons-list-item>
-		<ons-list-item ng-show="order.notes">
+		<ons-list-item ng-show="project.notes">
 			<label>Notes</label>
-			 {{ order.notes }}
+			 {{ project.notes }}
 		</ons-list-item>
-		<ons-list-item ng-show="order.import_export">
+		<ons-list-item ng-show="project.import_export">
 			<label>Import/Export</label>
-			 {{ order.import_export }}
+			 {{ project.import_export }}
 		</ons-list-item>
-		<ons-list-item ng-show="order.description">
+		<ons-list-item ng-show="project.description">
 			<label>Description</label>
-			 {{ order.description }}
+			 {{ project.description }}
 		</ons-list-item>
-		<ons-list-item ng-show="order.temperature">
+		<ons-list-item ng-show="project.temperature">
 			<label>Temperature</label>
-			 {{ order.temperature }}
+			 {{ project.temperature }}
 		</ons-list-item>
-		<ons-list-item ng-show="order.date_of_arrival">
+		<ons-list-item ng-show="project.date_of_arrival">
 			<label>Arrival Date</label>
-			 {{ order.date_of_arrival }}
+			 {{ project.date_of_arrival }}
 		</ons-list-item>
-		<ons-list-item ng-show="order.start_of_customs_clearance">
+		<ons-list-item ng-show="project.start_of_customs_clearance">
 			<label>Custom clearance start</label>
-			 {{ order.start_of_customs_clearance }}
+			 {{ project.start_of_customs_clearance }}
 		</ons-list-item>
-		<ons-list-item ng-show="order.end_date_expected">
+		<ons-list-item ng-show="project.end_date_expected">
 			<label>End date expected</label>
-			 {{ order.end_date_expected }}
+			 {{ project.end_date_expected }}
 		</ons-list-item>
-		<ons-list-item ng-show="order.clearance_status">
+		<ons-list-item ng-show="project.clearance_status">
 			<label>Clearance status</label>
-			 {{ order.clearance_status }}
+			 {{ project.clearance_status }}
 		</ons-list-item>
 	</ons-list>
 </ons-page>

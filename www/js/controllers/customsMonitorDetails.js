@@ -6,7 +6,7 @@
  */
 module.controller('customsMonitorDetailsController', function ($scope, $http) {
 
-    ons.ready(function () {
+    //ons.ready(function () {
 
         var page = nav.getCurrentPage(), order = (page.options.order); //
 
@@ -43,5 +43,5 @@ module.controller('customsMonitorDetailsController', function ($scope, $http) {
             destructed: false
         }
 
-    });
+    //});
 });

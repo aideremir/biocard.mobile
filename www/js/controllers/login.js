@@ -3,70 +3,79 @@
  */
 module.controller('loginController', function ($scope, $http) {
 
-    ons.ready(function () {
+    $scope.loginPage = {
 
-        $scope.loginPage = {
-            onLine: navigator.onLine,
+        auth: function () {
+            return false;
+        },
+        userLogout: function () {
+            biocard.login = null;
+            biocard.password = null;
 
-            auth: function () {
-                return false;
-            },
-            userLogin: function () {
-                var login = this.login, password = this.password;
+            localStorage.removeItem('login');
+            localStorage.removeItem('password');
+            localStorage.removeItem('name');
+            localStorage.removeItem('company');
 
-                modal.show();
+        },
+        userLogin: function () {
 
 
-                $http.get('http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password).
-                    success(function (data, status, headers, config) {
+            var login = this.login, password = this.password;
 
-                        var error = data.error;
+            modal.show();
 
-                        if (error != undefined) {
 
-                            ons.notification.alert({
-                                message: 'Wrong login or password',
-                                title: 'Error',
-                                buttonLabel: 'OK',
-                                animation: 'default'
-                            });
-                        }
-                        else {
+            $http.get('http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password).
+                success(function (data, status, headers, config) {
 
-                            localStorage.setItem('login', login);
-                            localStorage.setItem('password', password);
-                            localStorage.setItem('name', data.name);
-                            localStorage.setItem('company', data.company);
+                    var error = data.error;
 
-                            biocard.login = login;
-                            biocard.password = password;
-                            biocard.name = data.name;
-                            biocard.company = data.company;
-
-                            menu.setMainPage('pages/dashboard.html', {closeMenu: true});
-
-                        }
-
-                        modal.hide();
-                    }).
-                    error(function (data, status, headers, config) {
-
-                        console.log(data, status);
+                    if (error != undefined) {
 
                         ons.notification.alert({
-                            messageHTML: 'ERR_INTERNET_DISCONNECTED',
+                            message: 'Wrong login or password',
                             title: 'Error',
                             buttonLabel: 'OK',
                             animation: 'default'
                         });
+                    }
+                    else {
 
-                        modal.hide();
+                        localStorage.setItem('login', login);
+                        localStorage.setItem('password', password);
+                        localStorage.setItem('name', data.name);
+                        localStorage.setItem('company', data.company);
+
+                        biocard.login = login;
+                        biocard.password = password;
+                        biocard.name = data.name;
+                        biocard.company = data.company;
+
+                        menu.setMainPage('pages/dashboard.html', {closeMenu: true});
+
+                    }
+
+                    modal.hide();
+                }).
+                error(function (data, status, headers, config) {
+
+                    console.log(data, status);
+
+                    ons.notification.alert({
+                        messageHTML: 'ERR_INTERNET_DISCONNECTED',
+                        title: 'Error',
+                        buttonLabel: 'OK',
+                        animation: 'default'
                     });
 
-                return true;
-            }
-        }
+                    modal.hide();
+                });
 
-    });
+            return true;
+        }
+    }
+
+
 });
 

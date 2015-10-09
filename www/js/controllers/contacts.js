@@ -3,7 +3,7 @@
  */
 module.controller('contactsController', function ($scope, $http) {
 
-    ons.ready(function () {
+    //ons.ready(function () {
 
         var message = '';
 
@@ -34,5 +34,5 @@ module.controller('contactsController', function ($scope, $http) {
 
 
 
-    });
+   // });
 });

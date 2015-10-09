@@ -3,7 +3,7 @@
  */
 module.controller('regulatoryController', function ($scope, $http) {
 
-    ons.ready(function () {
+
 
         $scope.searchMatch =  function(string) //@todo: move all that shit to app scope!
         {
@@ -23,10 +23,12 @@ module.controller('regulatoryController', function ($scope, $http) {
             $http.get('http://cabinet.biocard.com/api/regulatory?courierLogin=' + biocard.login + '&courierPassword=' + biocard.password).
                 success(function (data, status) {
 
-                    console.log(data);
+                    //console.log(data);
 
                     $scope.projects = data;
                     modal.hide();
+
+
 
                 }).
                 error(function (data, status, headers, config) {
@@ -43,5 +45,5 @@ module.controller('regulatoryController', function ($scope, $http) {
 
 
 
-    });
+
 });

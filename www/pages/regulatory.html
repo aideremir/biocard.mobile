@@ -12,7 +12,7 @@
 		<input ng-model="searchQuery"  type="search" class="search-input" placeholder="Search..." >
 	</div>
 
-	<ons-list>
+	<ons-list id="regulatory-list">
 		<ons-list-item ng-show="searchMatch(order.project)" ng-repeat="order in projects" modifier="chevron" class="list-item-container" ng-click="nav.pushPage('pages/regulatoryDetails.html', { animation: 'slide', order: order })">
 			<ons-row>
 				<ons-col>

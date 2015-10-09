@@ -3,7 +3,7 @@
  */
 module.controller('customsMonitorController', function ($scope, $http) {
 
-    ons.ready(function () {
+
 
         $scope.searchMatch =  function(string) //@todo: move all that shit to app scope!
         {
@@ -41,5 +41,5 @@ module.controller('customsMonitorController', function ($scope, $http) {
                 modal.hide();
             });
 
-    });
+
 });
