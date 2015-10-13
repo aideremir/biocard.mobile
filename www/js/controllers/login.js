@@ -3,38 +3,30 @@
  */
 module.controller('loginController', function ($scope, $http) {
 
-
     ons.ready(function () {
 
         $scope.loginPage = {
+            onLine: navigator.onLine,
 
             auth: function () {
                 return false;
             },
-            userLogout: function () {
-                biocard.login = null;
-                biocard.password = null;
-
-                localStorage.removeItem('login');
-                localStorage.removeItem('password');
-                localStorage.removeItem('name');
-                localStorage.removeItem('company');
-
-            },
             userLogin: function () {
-
-
                 var login = this.login, password = this.password;
 
                 modal.show();
 
+                var xml = '<itemlist>' +
+                    '<auth extra="' + biocard.extra + '" login="' + login + '" pass="' + password + '" />' +
+                    '</itemlist>';
 
-                $http.get('http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password).
-                    then(function (data) {
 
-                        var error = data.error;
+                $http.post(biocard.apiLink, xml).
+                    success(function (data, status, headers, config) {
 
-                        if (error != undefined) {
+                        var $error = $(data).find('error');
+
+                        if ($error.length > 0) {
 
                             ons.notification.alert({
                                 message: 'Wrong login or password',
@@ -47,28 +39,33 @@ module.controller('loginController', function ($scope, $http) {
 
                             localStorage.setItem('login', login);
                             localStorage.setItem('password', password);
-                            localStorage.setItem('name', data.name);
-                            localStorage.setItem('company', data.company);
 
                             biocard.login = login;
                             biocard.password = password;
-                            biocard.name = data.name;
-                            biocard.company = data.company;
 
                             menu.setMainPage('pages/dashboard.html', {closeMenu: true});
 
                         }
 
                         modal.hide();
-                    },
-                    function (data) {
+                    }).
+                    error(function (data, status, headers, config) {
 
-                        ons.notification.alert({
-                            messageHTML: 'LOGIN ERROR',
-                            title: 'Error',
-                            buttonLabel: 'OK',
-                            animation: 'default'
-                        });
+                        console.log(data);
+                        console.log(status);
+                        console.log(headers);
+                        console.log(config);
+
+
+
+                         ons.notification.alert({
+                         message: 'Error',
+                         title: 'login error',
+                         buttonLabel: 'OK',
+                         animation: 'default'
+                         });
+
+
 
                         modal.hide();
                     });
@@ -76,7 +73,6 @@ module.controller('loginController', function ($scope, $http) {
                 return true;
             }
         }
+
     });
-
 });
-
