@@ -9,6 +9,8 @@ var biocard = {
 
     auth: function () {
 
+        return true; // temp
+
         this.login = localStorage.getItem('login');
         this.password = localStorage.getItem('password');
         this.name = localStorage.getItem('name');
