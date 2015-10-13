@@ -47,10 +47,10 @@ module.controller('appController', function ($scope) {
 
     //document.body.style.marginTop = "20px";
 
-    ons.ready(function () {
+
 
         $scope.startPage = biocard.auth() ? 'pages/dashboard.html' : 'pages/login.html';
-    });
+
 
 });
 

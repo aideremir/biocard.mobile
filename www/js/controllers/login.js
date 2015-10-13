@@ -3,7 +3,7 @@
  */
 module.controller('loginController', function ($scope, $http) {
 
-    ons.ready(function () {
+
 
 
         $scope.loginPage = {
@@ -63,10 +63,10 @@ module.controller('loginController', function ($scope, $http) {
                     }).
                     error(function (data, status, headers, config) {
 
-                        console.log(data, status);
+                        console.log(data, status, headers, config);
 
                         ons.notification.alert({
-                            messageHTML: 'ERR_INTERNET_DISCONNECTED' + data + ' ' + status,
+                            messageHTML: 'ERR_INTERNET_DISCONNECTED ' + data + ' ' + status + ' ' + headers + ' ' + config,
                             title: 'Error',
                             buttonLabel: 'OK',
                             animation: 'default'
@@ -78,7 +78,7 @@ module.controller('loginController', function ($scope, $http) {
                 return true;
             }
         }
-    });
+
 
 });
 
