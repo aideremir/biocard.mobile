@@ -65,7 +65,7 @@ module.controller('loginController', function ($scope, $http) {
                     }).error(function (data) {
 
                         ons.notification.alert({
-                            messageHTML: 'LOGIN ERROR',
+                            messageHTML: 'LOGIN ERROR!',
                             title: 'Error',
                             buttonLabel: 'OK',
                             animation: 'default'
