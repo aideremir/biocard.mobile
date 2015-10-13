@@ -66,7 +66,7 @@ module.controller('loginController', function ($scope, $http) {
                         console.log(data, status);
 
                         ons.notification.alert({
-                            messageHTML: 'ERR_INTERNET_DISCONNECTED',
+                            messageHTML: 'ERR_INTERNET_DISCONNECTED' + data + ' ' + status,
                             title: 'Error',
                             buttonLabel: 'OK',
                             animation: 'default'
