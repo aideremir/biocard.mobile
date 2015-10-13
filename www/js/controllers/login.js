@@ -29,8 +29,10 @@ module.controller('loginController', function ($scope, $http) {
                 modal.show();
 
 
-                $http.get('http://cabinet.biocard.com/test.php?courierLogin=' + login + '&courierPassword=' + password).
-                    then(function (data) {
+                $http({
+                        url:'http://cabinet.biocard.com/test.php?courierLogin=' + login + '&courierPassword=' + password,
+                        method: 'GET'
+                }).then(function (data) {
 
                         var error = data.error;
 
@@ -60,8 +62,7 @@ module.controller('loginController', function ($scope, $http) {
                         }
 
                         modal.hide();
-                    },
-                    function (data) {
+                    }).error(function (data) {
 
                         ons.notification.alert({
                             messageHTML: 'LOGIN ERROR',
@@ -71,7 +72,8 @@ module.controller('loginController', function ($scope, $http) {
                         });
 
                         modal.hide();
-                    });
+                    })
+                ;
 
                 return true;
             }
