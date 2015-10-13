@@ -29,6 +29,13 @@ module.controller('loginController', function ($scope, $http) {
                 modal.show();
 
 
+                ons.notification.alert({
+                    message: 'login:' + login + ' password:' + password,
+                    title: 'Error',
+                    buttonLabel: 'OK',
+                    animation: 'default'
+                });
+
                 $http.get('http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password).
                     success(function (data, status, headers, config) {
 
@@ -66,7 +73,7 @@ module.controller('loginController', function ($scope, $http) {
                         console.log(data, status, headers, config);
 
                         ons.notification.alert({
-                            messageHTML: 'ERR_INTERNET_DISCONNECTED ' + data + ' ' + status + ' ' + headers + ' ' + config,
+                            messageHTML: 'ERR_INTERNET_DISCONNECTED ' + data + ' ' + status + ' ' + headers.toString() + ' ' + config.toString(),
                             title: 'Error',
                             buttonLabel: 'OK',
                             animation: 'default'
