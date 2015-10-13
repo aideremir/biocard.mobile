@@ -4,7 +4,7 @@
 module.controller('loginController', function ($scope, $http) {
 
 
-
+    ons.ready(function () {
 
         $scope.loginPage = {
 
@@ -78,7 +78,7 @@ module.controller('loginController', function ($scope, $http) {
                 return true;
             }
         }
-
+    });
 
 });
 
