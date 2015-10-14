@@ -29,49 +29,49 @@ module.controller('loginController', function ($scope, $http) {
                 modal.show();
 
 
-                $.get( 'http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password, function(data) {
+                $http.get('http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password).
+                    then(function (data) {
 
-                    var error = data.error;
+                        var error = data.error;
 
-                    if (error != undefined) {
+                        if (error != undefined) {
+
+                            ons.notification.alert({
+                                message: 'Wrong login or password',
+                                title: 'Error',
+                                buttonLabel: 'OK',
+                                animation: 'default'
+                            });
+                        }
+                        else {
+
+                            localStorage.setItem('login', login);
+                            localStorage.setItem('password', password);
+                            localStorage.setItem('name', data.name);
+                            localStorage.setItem('company', data.company);
+
+                            biocard.login = login;
+                            biocard.password = password;
+                            biocard.name = data.name;
+                            biocard.company = data.company;
+
+                            menu.setMainPage('pages/dashboard.html', {closeMenu: true});
+
+                        }
+
+                        modal.hide();
+                    },
+                    function (data) {
 
                         ons.notification.alert({
-                            message: 'Wrong login or password',
+                            messageHTML: 'LOGIN ERROR',
                             title: 'Error',
                             buttonLabel: 'OK',
                             animation: 'default'
                         });
-                    }
-                    else {
 
-                        localStorage.setItem('login', login);
-                        localStorage.setItem('password', password);
-                        localStorage.setItem('name', data.name);
-                        localStorage.setItem('company', data.company);
-
-                        biocard.login = login;
-                        biocard.password = password;
-                        biocard.name = data.name;
-                        biocard.company = data.company;
-
-                        menu.setMainPage('pages/dashboard.html', {closeMenu: true});
-
-                    }
-
-                    modal.hide();
-
-                }).fail(function() {
-                    ons.notification.alert({
-                        messageHTML: 'LOGIN ERROR!!!',
-                        title: 'Error',
-                        buttonLabel: 'OK',
-                        animation: 'default'
+                        modal.hide();
                     });
-
-                    modal.hide();
-                    });
-
-
 
                 return true;
             }
