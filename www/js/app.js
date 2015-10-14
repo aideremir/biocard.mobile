@@ -9,7 +9,7 @@ var biocard = {
 
     auth: function () {
 
-        return true; // temp
+        //return true; // temp
 
         this.login = localStorage.getItem('login');
         this.password = localStorage.getItem('password');
