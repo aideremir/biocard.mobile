@@ -1,0 +1,121 @@
+<style>
+	.propsList ons-icon {
+		width: 25px;
+		opacity: 0.3;
+	}
+
+	.warehouse-tab-select .button-bar__button{
+		font-size: 7px;
+	}
+</style>
+<ons-page ng-controller="warehouseDetailsController">
+	<ons-toolbar>
+		<div class="left">
+			<ons-toolbar-button ng-click="nav.popPage()">
+				<ons-icon icon="fa-chevron-left"></ons-icon>
+			</ons-toolbar-button>
+		</div>
+		<div class="center">{{ order.name }}</div>
+	</ons-toolbar>
+
+	<div style="padding: 10px;" >
+		<div class="button-bar warehouse-tab-select" style="width: 100%" >
+			<div class="button-bar__item">
+				<input type="radio" name="segment-a" checked  ng-click="show('received')">
+				<button class="button-bar__button">Received</button>
+			</div>
+			<div class="button-bar__item">
+				<input type="radio" name="segment-a" ng-click="show('stock')">
+				<button class="button-bar__button">Stock</button>
+			</div>
+			<div class="button-bar__item">
+				<input type="radio" name="segment-a"  ng-click="show('relabel')">
+				<button class="button-bar__button">Relabel</button>
+			</div>
+			<div class="button-bar__item">
+				<input type="radio" name="segment-a"  ng-click="show('dispatch')">
+				<button class="button-bar__button">Dispatch</button>
+			</div>
+			<div class="button-bar__item">
+				<input type="radio" name="segment-a"  ng-click="show('return')">
+				<button class="button-bar__button">Return</button>
+			</div>
+			<div class="button-bar__item">
+				<input type="radio" name="segment-a"  ng-click="show('destructed')">
+				<button class="button-bar__button">Destructed</button>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div ng-show="tabs.received">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryReceived" type="search" class="search-input" placeholder="Search..." >
+		</div>
+
+		<ul ng-show="searchMatch(searchQueryReceived, order)" class="list list--inset" ng-repeat="order in projects.Received" style="margin-bottom: 10px">
+			<li  ng-repeat="(key, value) in order" class="list__item list__item--inset">
+				<label class="small">{{ key }}</label>
+					{{ value }}
+			</li>
+		</ul>
+
+	</div>
+	<div ng-show="tabs.stock">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryStock" type="search" class="search-input" placeholder="Search..." >
+		</div>
+		<ul ng-show="searchMatch(searchQueryStock, order)" class="list list--inset" ng-repeat="order in projects.Stock" style="margin-bottom: 10px">
+			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
+				<label class="small">{{ key }}</label>
+				{{ value }}
+			</li>
+		</ul>
+	</div>
+	<div ng-show="tabs.relabel">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryRelabel" type="search" class="search-input" placeholder="Search..." >
+		</div>
+		<ul ng-show="searchMatch(searchQueryRelabel, order)" class="list list--inset" ng-repeat="order in projects.ReLabelling" style="margin-bottom: 10px">
+			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
+				<label class="small">{{ key }}</label>
+				{{ value }}
+			</li>
+		</ul>
+	</div>
+	<div ng-show="tabs.dispatch">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryDispatch" type="search" class="search-input" placeholder="Search..." >
+		</div>
+		<ul ng-show="searchMatch(searchQueryDispatch, order)" class="list list--inset" ng-repeat="order in projects.Dispatch" style="margin-bottom: 10px">
+			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
+				<label class="small">{{ key }}</label>
+				{{ value }}
+			</li>
+		</ul>
+	</div>
+	<div ng-show="tabs.return">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryReturn" type="search" class="search-input" placeholder="Search..." >
+		</div>
+		<ul ng-show="searchMatch(searchQueryReturn, order)" class="list list--inset" ng-repeat="order in projects.Return" style="margin-bottom: 10px">
+			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
+				<label class="small">{{ key }}</label>
+				{{ value }}
+			</li>
+		</ul>
+	</div>
+	<div ng-show="tabs.destructed">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryDestructed" type="search" class="search-input" placeholder="Search..." >
+		</div>
+		<ul ng-show="searchMatch(searchQueryDestructed, order)" class="list list--inset" ng-repeat="order in projects.Destructed" style="margin-bottom: 10px">
+			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
+				<label class="small">{{ key }}</label>
+				{{ value }}
+			</li>
+		</ul>
+	</div>
+
+</ons-page>

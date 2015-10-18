@@ -1,0 +1,97 @@
+<style>
+	ons-list-item .overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	ons-list-item .overlay {
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1)));
+		background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+		}
+
+	ons-list-item span {
+		position: relative;
+		color: #FFF;
+		top: 20px;
+		font-size: 120%;
+	}
+
+</style>
+<ons-page ng-controller="dashboardController">
+	<ons-toolbar>
+		<div class="left">
+			<ons-toolbar-button ng-click="menu.toggleMenu()">
+				<ons-icon icon="fa-bars"></ons-icon>
+			</ons-toolbar-button>
+		</div>
+		<div class="center">
+			<img src="img/logo.svg" style="width: 48%">
+
+			<div style="
+    padding: 0;
+    /* height: 0; */
+    margin: 0;
+    line-height: 19px;
+    font-size: 10px;
+    position: relative;
+    top: -27px;
+">Welcome, {{userName}}!
+			</div>
+		</div>
+	</ons-toolbar>
+
+	<ons-list>
+		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/regulatory.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/regulatory.html', {closeMenu: true})">
+			<div class="overlay"></div>
+			<span>Regulatory</span>
+		</ons-list-item>
+		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/customs.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/customs.html', {closeMenu: true})">
+			<div class="overlay"></div>
+			<span>Customs</span>
+		</ons-list-item>
+		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/customs.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/customsMonitor.html', {closeMenu: true})">
+			<div class="overlay"></div>
+			<span>Online Customs</span>
+		</ons-list-item>
+		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/storage.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/warehouse.html', {closeMenu: true})">
+			<div class="overlay"></div>
+			<span>Warehouse</span>
+		</ons-list-item>
+		<ons-list-item style="border-bottom: 1px solid #FFF;color: #FFF; background: url(img/tracking.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/tracking.html', {closeMenu: true})">
+
+			<div class="overlay"></div>
+			<span>Tracking</span>
+		</ons-list-item>
+
+		<ons-list-item style="border-bottom: 1px solid #FFF;color: #FFF; background: url(img/delivery-van.png) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="nav.pushPage('pages/order.html', {animation: 'slide'})">
+
+			<div class="overlay"></div>
+			<span>Delivery Request</span>
+		</ons-list-item>
+
+		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/calc.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/calculator.html', {closeMenu: true})">
+			<div class="overlay"></div>
+			<span>Calculator</span>
+		</ons-list-item>
+
+
+		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/news.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/news.html', {closeMenu: true})">
+			<!--ons-icon icon="ion-ios-paper-outline" size="18px"></ons-icon-->
+			<div class="overlay"></div>
+			<span>News</span>
+		</ons-list-item>
+		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/feedback.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/contacts.html', {closeMenu: true})">
+			<div class="overlay"></div>
+			<span>Contacts</span>
+		</ons-list-item>
+		<!--ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/settings.html', {closeMenu: true})">
+			Settings
+		</ons-list-item-->
+
+
+	</ons-list>
+
+</ons-page>
