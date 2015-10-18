@@ -34,7 +34,9 @@ module.controller('loginController', function ($scope, $http) {
                 xhr.open('GET', 'http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password, true);
                 xhr.onload = function(){
 
-                    var data = JSON.parse(xhr.response);
+                    var data = eval("(" + xhr.response + ")");
+
+                    console.log(data);
 
                     var  error = data.error;
 
