@@ -29,53 +29,56 @@ module.controller('loginController', function ($scope, $http) {
                 modal.show();
 
 
+                $http.jsonp('http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password + '&callback=JSON_CALLBACK').
+                    success(function (data, status, headers, config) {
 
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', 'http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password, true);
-                xhr.onload = function(){
+                        var error = data.error;
 
-                    var data = eval("(" + xhr.response + ")");
+                        if (error != undefined) {
 
-                    console.log(data);
+                            ons.notification.alert({
+                                message: 'Wrong login or password',
+                                title: 'Error',
+                                buttonLabel: 'OK',
+                                animation: 'default'
+                            });
+                        }
+                        else {
 
-                    var  error = data.error;
+                            localStorage.setItem('login', login);
+                            localStorage.setItem('password', password);
+                            localStorage.setItem('name', data.name);
+                            localStorage.setItem('company', data.company);
 
-                    if (error != undefined) {
+                            biocard.login = login;
+                            biocard.password = password;
+                            biocard.name = data.name;
+                            biocard.company = data.company;
+
+                            menu.setMainPage('pages/dashboard.html', {closeMenu: true});
+
+                        }
+
+                        modal.hide();
+                    }).
+                    error(function (data, status, headers, config) {
+
+                        console.log(data, status);
 
                         ons.notification.alert({
-                            message: 'Wrong login or password',
+                            messageHTML: 'ERR_INTERNET_DISCONNECTED',
                             title: 'Error',
                             buttonLabel: 'OK',
                             animation: 'default'
                         });
-                    }
-                    else {
 
-                        localStorage.setItem('login', login);
-                        localStorage.setItem('password', password);
-                        localStorage.setItem('name', data.name);
-                        localStorage.setItem('company', data.company);
-
-                        biocard.login = login;
-                        biocard.password = password;
-                        biocard.name = data.name;
-                        biocard.company = data.company;
-
-                        menu.setMainPage('pages/dashboard.html', {closeMenu: true});
-
-                    }
-
-                    modal.hide();
-                };
-                xhr.send();
-
-
-
+                        modal.hide();
+                    });
 
                 return true;
             }
         }
-    });
 
+    });
 });
 
