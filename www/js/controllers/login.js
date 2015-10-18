@@ -29,7 +29,7 @@ module.controller('loginController', function ($scope, $http) {
                 modal.show();
 
 
-                $http.get('http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password + '&callback=JSON_CALLBACK').
+                $http.get('http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password).
                     success(function (data, status, headers, config) {
 
                         var error = data.error;
