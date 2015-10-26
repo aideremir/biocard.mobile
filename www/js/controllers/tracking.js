@@ -141,8 +141,10 @@ module.controller('trackingController', function ($scope, $http) {
 
                 $scope.orders = orders;
 
-                placeOnMap(orders);
                 modal.hide();
+
+                //placeOnMap(orders);  //@note: temporaly commented!!!!
+
 
 
             }).
