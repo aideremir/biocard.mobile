@@ -12,7 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
 
 	<!-- Enable all requests, inline styles, and eval() -->
-	<meta http-equiv="Content-Security-Policy" content="default-src * cabinet.biocard.com; connect-src *; style-src 'self' 'unsafe-inline' *.googleapis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' cabinet.biocard.com *.googleapis.com *.gstatic.com">
+	<meta http-equiv="Content-Security-Policy" content="default-src * cabinet.biocard.com; connect-src *; style-src 'self' 'unsafe-inline' *.googleapis.com; script-src 'self' http://cabinet.biocard.com https://maps.googleapis.com/ https://maps.gstatic.com/ https://mts0.googleapis.com/ 'unsafe-inline' 'unsafe-eval'">
 
 	<link rel="stylesheet" href="css/onsenui.css">
 	<!--link rel="stylesheet" href="css/onsen-css-components.css"-->
@@ -45,7 +45,7 @@
 	</style>
 
 
-	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCsx6gff0yX714EQ3fDyyAT_MrwXKVI4Ng&sensor=true"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsx6gff0yX714EQ3fDyyAT_MrwXKVI4Ng&sensor=false"></script>
 	<script src="js/angular/angular.js"></script>
 
 	<script src="js/jquery-2.1.3.min.js"></script>
