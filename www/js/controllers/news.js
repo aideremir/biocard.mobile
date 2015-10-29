@@ -1,5 +1,6 @@
 module.controller('newsController', ['$scope', '$sce', function($scope, $sce) {
-    //ons.ready(function() {
+
+    ons.ready(function() {
 
         $scope.failed = false;
         $scope.isFetching = true;
@@ -55,5 +56,5 @@ module.controller('newsController', ['$scope', '$sce', function($scope, $sce) {
             });
 
         });
-    //});
+    });
 }]);

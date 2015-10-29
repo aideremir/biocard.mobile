@@ -6,7 +6,7 @@
  */
 module.controller('orderDetailsController', function ($scope) {
 
-    //ons.ready(function () {
+    ons.ready(function () {
 
         var page = nav.getCurrentPage(), order = (page.options.order); //
 
@@ -29,5 +29,5 @@ module.controller('orderDetailsController', function ($scope) {
             $scope.tabs[tab] = true;
         }
 
-    //});
+    });
 });

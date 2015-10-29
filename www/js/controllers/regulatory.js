@@ -3,14 +3,13 @@
  */
 module.controller('regulatoryController', function ($scope, $http) {
 
+    ons.ready(function () {
 
-
-        $scope.searchMatch =  function(string) //@todo: move all that shit to app scope!
+        $scope.searchMatch = function (string) //@todo: move all that shit to app scope!
         {
             var query = $scope.searchQuery;
 
-            if(!query)
-            {
+            if (!query) {
                 return true;
             }
 
@@ -19,31 +18,30 @@ module.controller('regulatoryController', function ($scope, $http) {
             return searchPattern.test(string);
         }
 
-            modal.show();
-            $http.get('http://cabinet.biocard.com/api/regulatory?courierLogin=' + biocard.login + '&courierPassword=' + biocard.password).
-                success(function (data, status) {
+        modal.show();
+        $http.get('http://cabinet.biocard.com/api/regulatory?courierLogin=' + biocard.login + '&courierPassword=' + biocard.password).
+            success(function (data, status) {
 
-                    //console.log(data);
+                //console.log(data);
 
-                    $scope.projects = data;
-                    modal.hide();
+                $scope.projects = data;
+                modal.hide();
 
 
+            }).
+            error(function (data, status, headers, config) {
 
-                }).
-                error(function (data, status, headers, config) {
-
-                    ons.notification.alert({
-                        messageHTML: 'ERR_INTERNET_DISCONNECTED',
-                        title: 'Error',
-                        buttonLabel: 'OK',
-                        animation: 'default'
-                    });
-
-                    modal.hide();
+                ons.notification.alert({
+                    messageHTML: 'ERR_INTERNET_DISCONNECTED',
+                    title: 'Error',
+                    buttonLabel: 'OK',
+                    animation: 'default'
                 });
 
+                modal.hide();
+            });
 
 
+    });
 
 });

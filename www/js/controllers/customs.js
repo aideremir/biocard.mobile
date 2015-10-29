@@ -3,12 +3,13 @@
  */
 module.controller('customsController', function ($scope, $http) {
 
-        $scope.searchMatch =  function(string) //@todo: move all that shit to app scope!
+    ons.ready(function () {
+
+        $scope.searchMatch = function (string) //@todo: move all that shit to app scope!
         {
             var query = $scope.searchQuery;
 
-            if(!query)
-            {
+            if (!query) {
                 return true;
             }
 
@@ -40,5 +41,7 @@ module.controller('customsController', function ($scope, $http) {
 
                 modal.hide();
             });
+
+    });
 
 });

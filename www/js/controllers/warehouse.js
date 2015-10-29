@@ -6,14 +6,13 @@
  */
 module.controller('warehouseController', function ($scope, $http) {
 
+    ons.ready(function () {
 
-
-        $scope.searchMatch =  function(string) //@todo: move all that shit to app scope!
+        $scope.searchMatch = function (string) //@todo: move all that shit to app scope!
         {
             var query = $scope.searchQuery;
 
-            if(!query)
-            {
+            if (!query) {
                 return true;
             }
 
@@ -45,7 +44,7 @@ module.controller('warehouseController', function ($scope, $http) {
                 modal.hide();
             });
 
-
+    });
 
 
 });

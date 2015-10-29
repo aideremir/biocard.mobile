@@ -6,16 +6,12 @@
  */
 module.controller('regulatoryDetailsController', function ($scope, $http) {
 
-    var page = nav.getCurrentPage(), order = (page.options.order); //
+    ons.ready(function () {
 
-    $scope.order = order;
+        var page = nav.getCurrentPage(), order = (page.options.order); //
 
-    console.log('test');
-    console.log(nav);
-    console.log(page);
-    console.log($scope);
+        $scope.order = order;
 
-
-
+    });
 
 });

@@ -3,7 +3,7 @@
  */
 module.controller('orderController', function ($scope, $http) {
 
-    //ons.ready(function () {
+    ons.ready(function () {
 
         $scope.tabs = {
             receiver: false,
@@ -59,7 +59,7 @@ module.controller('orderController', function ($scope, $http) {
                 modal.hide();
             })
 
-    //});
+    });
 
     $scope.addOrder = function()
     {

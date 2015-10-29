@@ -6,9 +6,10 @@
  */
 module.controller('dashboardController', function ($scope) {
 
+    ons.ready(function () {
 
         $scope.login = biocard.login;
         $scope.userName = biocard.name;
 
-
+    });
 });

@@ -1,6 +1,6 @@
 module.controller('calculatorController', function ($scope, $http) {
 
-    //ons.ready(function () {
+    ons.ready(function () {
         // Init code here
 
         $scope.citiesFrom = [];
@@ -148,5 +148,5 @@ module.controller('calculatorController', function ($scope, $http) {
         }
 
 
-    //});
+    });
 });
