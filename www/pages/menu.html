@@ -9,43 +9,43 @@
 
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/dashboard.html', {closeMenu: true})">
 		<ons-icon icon="ion-ios-home-outline" size="18px"></ons-icon>
-		Home
+		{{ biocard.t('Home') }}
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/regulatory.html', {closeMenu: true})">
 		<ons-icon icon="ion-ios-book-outline" size="18px"></ons-icon>
-		Regulatory
+		{{ biocard.t('Regulatory') }}
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/customs.html', {closeMenu: true})">
 		<ons-icon icon="ion-ios-briefcase-outline" size="18px"></ons-icon>
-		Customs
+		{{ biocard.t('Customs') }}
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/customsMonitor.html', {closeMenu: true})">
 		<ons-icon icon="ion-ios-monitor-outline" size="18px"></ons-icon>
-		Online Customs
+		{{ biocard.t('Online Customs') }}
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/warehouse.html', {closeMenu: true})">
 		<ons-icon icon="ion-ios-box-outline" size="18px"></ons-icon>
-		Warehouse
+		{{ biocard.t('Warehouse') }}
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/tracking.html', {closeMenu: true})">
 		<ons-icon icon="ion-ios-location-outline" size="18px"></ons-icon>
-		Tracking
+		{{ biocard.t('Tracking') }}
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="nav.pushPage('pages/order.html', {animation: 'slide'})">
 		<ons-icon icon="ion-ios-plus-outline" size="18px"></ons-icon>
-		Delivery Request
+		{{ biocard.t('Delivery Request') }}
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/calculator.html', {closeMenu: true})">
 		<ons-icon icon="ion-ios-calculator-outline" size="18px"></ons-icon>
-		Calculator
+		{{ biocard.t('Calculator') }}
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/news.html', {closeMenu: true})">
 		<ons-icon icon="ion-ios-paper-outline" size="18px"></ons-icon>
-		News
+		{{ biocard.t('News') }}
 	</ons-list-item>
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/contacts.html', {closeMenu: true})">
 		<ons-icon icon="ion-ios-telephone-outline" size="18px"></ons-icon>
-		Contacts
+		{{ biocard.t('Contacts') }}
 	</ons-list-item>
 
 
@@ -55,7 +55,7 @@
 
 	<ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/login.html', {closeMenu: true, callback: function(){biocard.login = null; biocard.password = null;localStorage.removeItem('login');localStorage.removeItem('password');localStorage.removeItem('name');localStorage.removeItem('company');}})">
 		<ons-icon icon="ion-ios-unlocked-outline" size="18px"></ons-icon>
-		Logout
+		{{ biocard.t('Logout') }}
 	</ons-list-item>
 </ons-list>
 

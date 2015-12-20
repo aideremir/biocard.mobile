@@ -6,6 +6,15 @@ var biocard = {
     extra: '13',
     login: '',
     password: '',
+    dict: dict,
+    curLang: 'ru',
+    t: function(string){
+
+        if(!!this.dict[string])
+            return this.dict[string][this.curLang]
+        else
+            return string;
+    },
 
     auth: function () {
 
@@ -49,6 +58,7 @@ module.controller('appController', function ($scope) {
 
     //document.body.style.marginTop = "20px";
 
+    $scope.biocard = biocard;
 
 
         $scope.startPage = biocard.auth() ? 'pages/dashboard.html' : 'pages/login.html';

@@ -38,7 +38,7 @@
     font-size: 10px;
     position: relative;
     top: -27px;
-">Welcome, {{ dict.welcome.en + userName}}!
+">{{ biocard.t('Welcome') + ', ' + userName}}!
 			</div>
 		</div>
 	</ons-toolbar>
@@ -46,46 +46,46 @@
 	<ons-list>
 		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/regulatory.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/regulatory.html', {closeMenu: true})">
 			<div class="overlay"></div>
-			<span>Regulatory</span>
+			<span>{{ biocard.t('Regulatory') }}</span>
 		</ons-list-item>
 		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/customs.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/customs.html', {closeMenu: true})">
 			<div class="overlay"></div>
-			<span>Customs</span>
+			<span>{{ biocard.t('Customs') }}</span>
 		</ons-list-item>
 		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/customs.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/customsMonitor.html', {closeMenu: true})">
 			<div class="overlay"></div>
-			<span>Online Customs</span>
+			<span>{{ biocard.t('Online Customs') }}</span>
 		</ons-list-item>
 		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/storage.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/warehouse.html', {closeMenu: true})">
 			<div class="overlay"></div>
-			<span>Warehouse</span>
+			<span>{{ biocard.t('Warehouse') }}</span>
 		</ons-list-item>
 		<ons-list-item style="border-bottom: 1px solid #FFF;color: #FFF; background: url(img/tracking.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/tracking.html', {closeMenu: true})">
 
 			<div class="overlay"></div>
-			<span>Tracking</span>
+			<span>{{ biocard.t('Tracking') }}</span>
 		</ons-list-item>
 
 		<ons-list-item style="border-bottom: 1px solid #FFF;color: #FFF; background: url(img/delivery-van.png) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="nav.pushPage('pages/order.html', {animation: 'slide'})">
 
 			<div class="overlay"></div>
-			<span>Delivery Request</span>
+			<span>{{ biocard.t('Delivery Request') }}</span>
 		</ons-list-item>
 
 		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/calc.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/calculator.html', {closeMenu: true})">
 			<div class="overlay"></div>
-			<span>Calculator</span>
+			<span>{{ biocard.t('Calculator') }}</span>
 		</ons-list-item>
 
 
 		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/news.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/news.html', {closeMenu: true})">
 			<!--ons-icon icon="ion-ios-paper-outline" size="18px"></ons-icon-->
 			<div class="overlay"></div>
-			<span>News</span>
+			<span>{{ biocard.t('News') }}</span>
 		</ons-list-item>
 		<ons-list-item style="border-bottom: 1px solid #FFF;background: url(img/feedback.jpg) 50% no-repeat; background-size: cover; padding-top: 16px; padding-bottom: 16px" onclick="menu.setMainPage('pages/contacts.html', {closeMenu: true})">
 			<div class="overlay"></div>
-			<span>Contacts</span>
+			<span>{{ biocard.t('Contacts') }}</span>
 		</ons-list-item>
 		<!--ons-list-item modifier="chevron" onclick="menu.setMainPage('pages/settings.html', {closeMenu: true})">
 			Settings

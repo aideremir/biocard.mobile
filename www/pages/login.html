@@ -2,7 +2,7 @@
 	.login-form {
 		text-align: center;
 		width: 80%;
-		margin: 40px auto 0;
+		margin: 20px auto 0;
 	}
 
 	input[type=text], input[type=password] {
@@ -50,10 +50,24 @@
 	<div class="logo"></div>
 
 	<div class="login-form">
-		<input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="text-input--underbar" placeholder="Login" value="" ng-model="loginPage.login">
-		<input type="password" class="text-input--underbar" placeholder="Password" value="" ng-model="loginPage.password">
+
+		<div class="button-bar" style="margin: 0 auto">
+			<div class="button-bar__item">
+				<input type="radio" name="segment-a" ng-checked="biocard.curLang === 'ru'" ng-click="loginPage.setLang('ru')">
+				<button class="button-bar__button">RU</button>
+			</div>
+
+			<div class="button-bar__item">
+				<input type="radio" name="segment-a" ng-checked="biocard.curLang === 'en'" ng-click="loginPage.setLang('en')">
+				<button class="button-bar__button">EN</button>
+			</div>
+		</div>
+		<br>
+
+		<input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" class="text-input--underbar" placeholder="{{biocard.t('Login')}}" value="" ng-model="loginPage.login">
+		<input type="password" class="text-input--underbar" placeholder="{{biocard.t('Password')}}" value="" ng-model="loginPage.password">
 		<br><br>
-		<ons-button modifier="large" ng-disabled="!loginPage.login || !loginPage.password" class="login-button" ng-click="loginPage.userLogin()">Log In</ons-button>
+		<ons-button modifier="large" ng-disabled="!loginPage.login || !loginPage.password" class="login-button" ng-click="loginPage.userLogin()">{{biocard.t('LogInButton')}}</ons-button>
 		<br><br>
 		<!--ons-button modifier="quiet" class="forgot-password">Forgot password?</ons-button-->
 	</div>

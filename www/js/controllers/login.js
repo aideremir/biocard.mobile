@@ -6,7 +6,13 @@ module.controller('loginController', function ($scope, $http) {
 
     ons.ready(function () {
 
+        $scope.biocard = biocard;
+
         $scope.loginPage = {
+
+            setLang: function(lang) {
+                $scope.biocard.curLang = lang;
+            },
 
             auth: function () {
                 return false;
@@ -66,7 +72,7 @@ module.controller('loginController', function ($scope, $http) {
                         //console.log(data, status);
 
                         ons.notification.alert({
-                            messageHTML: 'ERR_INTERNET_DISCONNECTED',
+                            messageHTML: 'Wrong login or password',
                             title: 'Error',
                             buttonLabel: 'OK',
                             animation: 'default'

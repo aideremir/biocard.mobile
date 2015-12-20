@@ -11,7 +11,7 @@ module.controller('dashboardController', function ($scope) {
         $scope.login = biocard.login;
         $scope.userName = biocard.name;
 
-        $scope.dict = dict;
+        $scope.biocard = biocard;
 
     });
 });
