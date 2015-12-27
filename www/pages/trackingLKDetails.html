@@ -1,0 +1,36 @@
+<style>
+	.propsList ons-icon {
+		width: 25px;
+		opacity: 0.3;
+	}
+
+	.trackingLK-tab-select .button-bar__button{
+		font-size: 7px;
+	}
+</style>
+<ons-page ng-controller="trackingLKDetailsController">
+	<ons-toolbar>
+		<div class="left">
+			<ons-toolbar-button ng-click="nav.popPage()">
+				<ons-icon icon="fa-chevron-left"></ons-icon>
+			</ons-toolbar-button>
+		</div>
+		<div class="center">{{ order.name }}</div>
+	</ons-toolbar>
+
+
+	<div ng-show="tabs.received">
+		<div style="padding: 10px">
+			<input ng-model="searchQueryReceived" type="search" class="search-input" placeholder="{{biocard.t('Search')}}..." >
+		</div>
+
+		<ul ng-show="searchMatch(searchQueryReceived, order)" class="list list--inset" ng-repeat="order in projects" style="margin-bottom: 10px">
+			<li  ng-repeat="(key, value) in order" class="list__item list__item--inset">
+				<label class="small">{{ key }}</label>
+					{{ value }}
+			</li>
+		</ul>
+
+	</div>
+
+</ons-page>

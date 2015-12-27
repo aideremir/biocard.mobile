@@ -22,27 +22,27 @@
 		<div class="button-bar warehouse-tab-select" style="width: 100%" >
 			<div class="button-bar__item">
 				<input type="radio" name="segment-a" checked  ng-click="show('received')">
-				<button class="button-bar__button">Received</button>
+				<button class="button-bar__button">{{biocard.t('Received')}}</button>
 			</div>
 			<div class="button-bar__item">
 				<input type="radio" name="segment-a" ng-click="show('stock')">
-				<button class="button-bar__button">Stock</button>
+				<button class="button-bar__button">{{biocard.t('Stock')}}</button>
 			</div>
 			<div class="button-bar__item">
 				<input type="radio" name="segment-a"  ng-click="show('relabel')">
-				<button class="button-bar__button">Relabel</button>
+				<button class="button-bar__button">{{biocard.t('Relabel')}}</button>
 			</div>
 			<div class="button-bar__item">
 				<input type="radio" name="segment-a"  ng-click="show('dispatch')">
-				<button class="button-bar__button">Dispatch</button>
+				<button class="button-bar__button">{{biocard.t('Dispatch')}}</button>
 			</div>
 			<div class="button-bar__item">
 				<input type="radio" name="segment-a"  ng-click="show('return')">
-				<button class="button-bar__button">Return</button>
+				<button class="button-bar__button">{{biocard.t('Return')}}</button>
 			</div>
 			<div class="button-bar__item">
 				<input type="radio" name="segment-a"  ng-click="show('destructed')">
-				<button class="button-bar__button">Destructed</button>
+				<button class="button-bar__button">{{biocard.t('Destructed')}}</button>
 			</div>
 		</div>
 	</div>
@@ -51,7 +51,7 @@
 
 	<div ng-show="tabs.received">
 		<div style="padding: 10px">
-			<input ng-model="searchQueryReceived" type="search" class="search-input" placeholder="Search..." >
+			<input ng-model="searchQueryReceived" type="search" class="search-input" placeholder="{{biocard.t('Search')}}..." >
 		</div>
 
 		<ul ng-show="searchMatch(searchQueryReceived, order)" class="list list--inset" ng-repeat="order in projects.Received" style="margin-bottom: 10px">

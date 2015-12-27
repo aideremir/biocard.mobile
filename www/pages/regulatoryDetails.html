@@ -18,24 +18,24 @@
 
 	<ons-list class="propsList">
 		<ons-list-item ng-show="order.company">
-			<label>Company</label>
+			<label>{{biocard.t('Company')}}</label>
 			 {{ order.company }}
 		</ons-list-item>
 		<ons-list-item ng-show="order.project">
-			<label>Project</label>
+			<label>{{biocard.t('Project')}}</label>
 			 {{ order.project }}
 		</ons-list-item>
 
 		<ons-list-item ng-show="order.description">
-			<label>Description</label>
+			<label>{{biocard.t('Description')}}</label>
 			 {{ order.description }}
 		</ons-list-item>
 		<ons-list-item ng-show="order.doc_submission">
-			<label>Documents submission</label>
+			<label>{{biocard.t('Documents submission')}}</label>
 			{{ order.doc_submission }}
 		</ons-list-item>
 		<ons-list-item ng-show="order.doc_received">
-			<label>Documents received</label>
+			<label>{{biocard.t('Documents received')}}</label>
 			{{ order.doc_received }}
 		</ons-list-item>
 

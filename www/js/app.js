@@ -10,10 +10,15 @@ var biocard = {
     curLang: 'ru',
     t: function(string){
 
-        if(!!this.dict[string])
+        if(!!this.dict[string]){
             return this.dict[string][this.curLang]
-        else
+        }
+
+        else {
+
             return string;
+        }
+
     },
 
     auth: function () {

@@ -5,11 +5,11 @@
 				<ons-icon icon="fa-bars"></ons-icon>
 			</ons-toolbar-button>
 		</div>
-		<div class="center">Regulatory</div>
+		<div class="center">{{biocard.t('Regulatory')}}</div>
 	</ons-toolbar>
 
 	<div style="padding: 10px">
-		<input ng-model="searchQuery"  type="search" class="search-input" placeholder="Search..." >
+		<input ng-model="searchQuery"  type="search" class="search-input" placeholder="{{biocard.t('Search')}}..." >
 	</div>
 
 	<ons-list id="regulatory-list">

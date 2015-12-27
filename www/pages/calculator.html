@@ -5,7 +5,7 @@
 				<ons-icon icon="fa-bars"></ons-icon>
 			</ons-toolbar-button>
 		</div>
-		<div class="center">{{dict.calculator[]}}</div>
+		<div class="center">{{biocard.t('Calculator')}}</div>
 	</ons-toolbar>
 
 	<div class="order-form" style="padding: 10px">
@@ -14,7 +14,7 @@
 		<br>
 
 		<ons-icon icon="ion-load-d" ng-show="pending_fromTowns" spin="true" style="position: absolute;right: 10px;margin-bottom: -25px;"></ons-icon>
-		<input autocomplete="off" autocorrect="off" spellcheck="false" type="text" class="text-input text-input--underbar" placeholder="City from" ng-change="changeCity(cityFrom,'fromTowns')" ng-model="cityFrom" value="" style="width: 100%" >
+		<input autocomplete="off" autocorrect="off" spellcheck="false" type="text" class="text-input text-input--underbar" placeholder="{{biocard.t('City from')}}" ng-change="changeCity(cityFrom,'fromTowns')" ng-model="cityFrom" value="" style="width: 100%" >
 
 
 
@@ -29,7 +29,7 @@
 		<br>
 
 		<ons-icon icon="ion-load-d" ng-show="pending_toTowns" spin="true" style="position: absolute;right: 10px;margin-bottom: -25px;"></ons-icon>
-		<input autocomplete="off" autocorrect="off" spellcheck="false" type="text" class="text-input text-input--underbar" placeholder="City to" ng-change="changeCity(cityTo, 'toTowns')" ng-model="cityTo" value="" style="width:100%">
+		<input autocomplete="off" autocorrect="off" spellcheck="false" type="text" class="text-input text-input--underbar" placeholder="{{biocard.t('City to')}}" ng-change="changeCity(cityTo, 'toTowns')" ng-model="cityTo" value="" style="width:100%">
 
 		<ul class="list" ng-show="toTowns.length">
 			<li class="list__item list__item--tappable" ng-repeat="town in toTowns" ng-click="selectCity(town.name,'cityTo', 'toTowns')">
@@ -41,7 +41,7 @@
 		<br>
 
 		<ul class="list">
-			<li class="list__header">Delivery type</li>
+			<li class="list__header">{{biocard.t('Delivery type')}}</li>
 			<li class="list__item list__item--tappable" ng-repeat="service in services">
 				<label class="radio-button">
 					<input type="radio" name="deliveryType"  ng-model="$parent.deliveryType" value="{{ service.code }}">
@@ -57,12 +57,12 @@
 		<br>
 		<br>
 
-		<input type="text" class="text-input text-input--underbar" placeholder="Weight"  ng-model="weight" value="" style="width:100%">
+		<input type="text" class="text-input text-input--underbar" placeholder="{{biocard.t('Weight')}}"  ng-model="weight" value="" style="width:100%">
 
 
 		<br><br>
 
 
-		<ons-button modifier="large" class="login-button" ng-disabled="!cityFrom || !cityTo || !weight || !deliveryType" ng-click="calculate()">Calculate</ons-button>
+		<ons-button modifier="large" class="login-button" ng-disabled="!cityFrom || !cityTo || !weight || !deliveryType" ng-click="calculate()">{{biocard.t('Calculate')}}</ons-button>
 	</div>
 </ons-page>

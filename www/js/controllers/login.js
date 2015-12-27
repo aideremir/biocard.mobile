@@ -72,7 +72,7 @@ module.controller('loginController', function ($scope, $http) {
                         //console.log(data, status);
 
                         ons.notification.alert({
-                            messageHTML: 'Wrong login or password',
+                            messageHTML: biocard.t('Wrong login'),
                             title: 'Error',
                             buttonLabel: 'OK',
                             animation: 'default'
