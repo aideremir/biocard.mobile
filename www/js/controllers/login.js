@@ -8,6 +8,8 @@ module.controller('loginController', function ($scope, $http) {
 
         $scope.biocard = biocard;
 
+        console.log(navigator.globalization);
+
         $scope.loginPage = {
 
             setLang: function(lang) {

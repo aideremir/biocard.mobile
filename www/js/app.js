@@ -61,7 +61,12 @@ var biocard = {
 
 module.controller('appController', function ($scope) {
 
-    //document.body.style.marginTop = "20px";
+    if(ons.platform.isIOS())
+    {
+        document.body.style.marginTop = "20px"; // for IOS only
+        document.body.style.backgroundColor = "#660000"; // for IOS only
+    }
+
 
     $scope.biocard = biocard;
 
