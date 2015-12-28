@@ -26,7 +26,7 @@ module.controller('trackingLKController', function ($scope, $http) {
         $http.get('http://cabinet.biocard.com/api/tracking?company=' + biocard.company).
             success(function (data, status) {
 
-                //console.log(data);
+                console.log(biocard.company);
 
                 $scope.projects = data;
                 modal.hide();

@@ -26,7 +26,7 @@
 
 		<ul ng-show="searchMatch(searchQueryReceived, order)" class="list list--inset" ng-repeat="order in projects" style="margin-bottom: 10px">
 			<li  ng-repeat="(key, value) in order" class="list__item list__item--inset">
-				<label class="small">{{ key }}</label>
+				<label class="small">{{ biocard.t(key) }}</label>
 					{{ value }}
 			</li>
 		</ul>

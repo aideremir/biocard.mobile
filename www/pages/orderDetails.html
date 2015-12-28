@@ -11,7 +11,7 @@
 				<ons-icon icon="fa-chevron-left"></ons-icon>
 			</ons-toolbar-button>
 		</div>
-		<div class="center">Order {{ order.orderno }}</div>
+		<div class="center">{{biocard.t('Order')}} {{ order.orderno }}</div>
 	</ons-toolbar>
 
 	<div style="padding: 10px;" >
@@ -21,19 +21,19 @@
 
 			<div class="button-bar__item">
 				<input type="radio" name="segment-a"  ng-click="show('sender')">
-				<button class="button-bar__button">Sender</button>
+				<button class="button-bar__button">{{biocard.t('Sender')}}</button>
 			</div>
 
 
 
 			<div class="button-bar__item">
 				<input type="radio" name="segment-a" checked ng-click="show('details')">
-				<button class="button-bar__button">Details</button>
+				<button class="button-bar__button">{{biocard.t('Details')}}</button>
 			</div>
 
 			<div class="button-bar__item">
 				<input type="radio" name="segment-a"  ng-click="show('receiver')">
-				<button class="button-bar__button">Receiver</button>
+				<button class="button-bar__button">{{biocard.t('Receiver')}}</button>
 			</div>
 
 		</div>
@@ -73,7 +73,7 @@
 			<ons-icon icon="fa-check"></ons-icon> {{ order.status }}
 		</ons-list-item>
 		<ons-list-item>
-			<ons-icon icon="fa-briefcase"></ons-icon> {{ order.weight }}&nbsp;kg
+			<ons-icon icon="fa-briefcase"></ons-icon> {{ order.weight }}&nbsp;{{biocard.t('kg')}}
 		</ons-list-item>
 		<ons-list-item>
 			<ons-icon icon="fa-money"></ons-icon> {{ order.price }}&nbsp;₽
