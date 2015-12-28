@@ -6,7 +6,7 @@ module.controller('newsController', ['$scope', '$sce', function($scope, $sce) {
         $scope.isFetching = true;
         modal.show();
 
-        $.get('http://cabinet.biocard.com/api/news',function (data) {
+        $.get('http://www.biocard.com/bitrix/rss.php?ID=5&LANG=ru&TYPE=news&LIMIT=300',function (data) {
 
             var $feed = $(data), content = '', newsList = [];
 
@@ -19,8 +19,12 @@ module.controller('newsController', ['$scope', '$sce', function($scope, $sce) {
                     title: $sce.trustAsHtml($item.find('title').text()),
                     //date: $sce.trustAsHtml(biocard.utils.dateFormat($item.find('pubDate').html())),
                     date: $sce.trustAsHtml($item.find('pubDate').text()),
-                    desc: $sce.trustAsHtml($item.find('description').text())
+                    desc: $sce.trustAsHtml($item.find('description').text()),
+                    img: $item.find('enclosure').attr('url')
                 }
+
+
+
 
                 newsList.push(newsListItem);
 
