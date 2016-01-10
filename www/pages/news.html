@@ -29,7 +29,7 @@
 		font-size: 13px;
 	}
 </style>
-<ons-page id="news" ng-controller="newsController">
+<ons-page id="news" ng-device-backbutton="nav.popPage()" ng-controller="newsController">
 	<ons-toolbar>
 		<div class="left">
 			<ons-toolbar-button ng-click="menu.toggleMenu()">

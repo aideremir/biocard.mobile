@@ -7,9 +7,12 @@
 <ons-page ng-controller="orderDetailsController">
 	<ons-toolbar>
 		<div class="left">
-			<ons-toolbar-button ng-click="nav.popPage()">
+			<!--ons-toolbar-button ng-click="nav.popPage()">
 				<ons-icon icon="fa-chevron-left"></ons-icon>
-			</ons-toolbar-button>
+			</ons-toolbar-button-->
+			<ons-back-button>
+				<ons-icon icon="fa-chevron-left"></ons-icon>
+			</ons-back-button>
 		</div>
 		<div class="center">{{biocard.t('Order')}} {{ order.orderno }}</div>
 	</ons-toolbar>

@@ -1,9 +1,9 @@
-<ons-page ng-controller="customsMonitorController">
+<ons-page ng-device-backbutton="nav.popPage()" ng-controller="customsMonitorController">
 	<ons-toolbar>
 		<div class="left">
-			<ons-toolbar-button ng-click="menu.toggleMenu()">
-				<ons-icon icon="fa-bars"></ons-icon>
-			</ons-toolbar-button>
+			<ons-back-button>
+				<ons-icon icon="fa-chevron-left"></ons-icon>
+			</ons-back-button>
 		</div>
 		<div class="center">{{biocard.t('Online Customs')}}</div>
 	</ons-toolbar>
