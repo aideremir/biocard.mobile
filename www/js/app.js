@@ -57,6 +57,17 @@ var biocard = {
     }
 };
 
+document.addEventListener("backbutton", onBackKeyDown, false);
+
+function onBackKeyDown() {
+    // Handle the back button
+    alert("Backbutton is pressed!");
+    //var element = document.querySelector( ".navigator-container");
+    //var scope = angular.element( element ).scope();
+    //scope.popPage();
+
+    return false;
+}
 
 
 module.controller('appController', function ($scope) {
