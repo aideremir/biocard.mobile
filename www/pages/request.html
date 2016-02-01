@@ -8,6 +8,9 @@
 <ons-page ng-device-backbutton="nav.popPage()" ng-controller="requestController">
 	<ons-toolbar>
 		<div class="center">{{biocard.t('Request')}}</div>
+		<div class="right" onclick="menu.setMainPage('pages/login.html', {closeMenu: true, callback: function(){biocard.login = null; biocard.password = null;localStorage.removeItem('login');localStorage.removeItem('password');localStorage.removeItem('name');localStorage.removeItem('company');}})">
+			<ons-icon icon="ion-ios-unlocked-outline" size="18px"></ons-icon>
+		</div>
 	</ons-toolbar>
 
 	<div style="padding: 10px;">

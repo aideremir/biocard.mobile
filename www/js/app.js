@@ -84,8 +84,8 @@ module.controller('appController', function ($scope) {
 
     var dashboard = 'pages/dashboard.html';
 
-    //if(biocard.login.slice(-2) == '_r') //TODO: вернуть!!!!
-    if(true)
+    if(biocard.login.slice(-2) == '_r') //TODO: вернуть!!!!
+    //if(true)
     {
         dashboard = 'pages/request.html';
     }
