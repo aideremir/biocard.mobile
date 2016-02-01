@@ -93,5 +93,12 @@ var dict = {
 
     'Wrong login': {ru: 'Неправильный логин или пароль', en: 'Wrong login or password'},
 
+    'projectNumber': {ru: 'Номер проекта', en: 'Project Number'},
+    'siteNo': {ru: 'Номер центра', en: 'Site Number'},
+    'comments': {ru: 'Комментарии', en: 'Comments'},
+    'materials': {ru: 'Материалы', en: 'Materials'},
+    'Quantity': {ru: 'Кол-во', en: 'Q-ty'},
+    'of': {ru: 'из', en: 'of'},
+
     'Logout': {ru: 'Выход', en: 'Logout'}
 }

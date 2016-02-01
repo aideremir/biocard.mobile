@@ -29,6 +29,7 @@ var biocard = {
         this.password = localStorage.getItem('password');
         this.name = localStorage.getItem('name');
         this.company = localStorage.getItem('company');
+        this.userId = localStorage.getItem('userId');
 
         return (this.login && this.password);
 
@@ -81,8 +82,15 @@ module.controller('appController', function ($scope) {
 
     $scope.biocard = biocard;
 
+    var dashboard = 'pages/dashboard.html';
 
-        $scope.startPage = biocard.auth() ? 'pages/dashboard.html' : 'pages/login.html';
+    //if(biocard.login.slice(-2) == '_r') //TODO: вернуть!!!!
+    if(true)
+    {
+        dashboard = 'pages/request.html';
+    }
+
+        $scope.startPage = biocard.auth() ? dashboard : 'pages/login.html';
 
 
 });

@@ -1,0 +1,142 @@
+<style>
+	.label--list {
+		position: relative;
+		top: -15px;
+		left: 10px;
+	}
+</style>
+<ons-page ng-device-backbutton="nav.popPage()" ng-controller="requestController">
+	<ons-toolbar>
+		<div class="center">{{biocard.t('Request')}}</div>
+	</ons-toolbar>
+
+	<div style="padding: 10px;">
+		<div class="button-bar" style="width: 100%">
+
+
+			<div class="button-bar__item">
+				<input type="radio" name="segment-a" checked ng-click="show('request')">
+				<button class="button-bar__button">Request</button>
+			</div>
+
+			<div class="button-bar__item">
+				<input type="radio" name="segment-a" ng-click="show('return')">
+				<button class="button-bar__button">Return</button>
+			</div>
+
+		</div>
+	</div>
+
+	<div ng-show="tabs.request">
+		<ul class="list">
+			<li class="list__item" style="padding: 20px 0">
+				<label class="small label--list">{{biocard.t('projectNumber')}}</label>
+
+
+				<ul class="list list--inset">
+					<li ng-repeat="study in studies" ng-click="selectStudy(study.STUDY_ID)" class="list__item list__item--tappable list--inset__item">
+						<label class="radio-button radio-button--list-item">
+							<input type="radio" name="study_id" value="{{ study.STUDY_ID }}" ng-model="request.projectNumber">
+							<div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+							{{ study.STUDY_NUMBER}}
+						</label>
+					</li>
+
+				</ul>
+
+
+
+				<!--input type="text" class="text-input text-input--transparent" placeholder="{{biocard.t('projectNumber')}}" ng-model="request.projectNumber" value="" style="width:100%"-->
+			</li>
+			<li ng-show="studyId" class="list__item" style="padding: 20px 0">
+				<!--input type="text" class="text-input text-input--transparent" placeholder="{{biocard.t('siteNo')}}" ng-model="request.siteNo" value="" style="width:100%"-->
+				<label class="small label--list">{{biocard.t('siteNo')}}</label>
+
+				<ul class="list list--inset">
+					<li ng-repeat="company in companies" class="list__item list__item--tappable list--inset__item">
+						<label class="radio-button radio-button--list-item">
+							<input type="radio" name="company" value="{{ company.COMPANY_ID}}" ng-model="companyId">
+							<div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+							{{ company.COMPANY_SITE }}
+						</label>
+					</li>
+				</ul>
+			</li>
+
+			<li ng-show="studyId" class="list__item" style="padding: 20px 0">
+				<!--input type="tel" class="text-input text-input--transparent" placeholder="{{biocard.t('materials')}}" ng-model="request.materials" value="" style="width:100%"-->
+				<label class="small label--list">{{biocard.t('materials')}}</label>
+
+				<ul class="list list--inset">
+					<li ng-repeat="material in materials" class="list__item list__item--tappable">
+						<label class="checkbox checkbox--noborder checkbox--list-item">
+							<input type="checkbox" name="materialName[{{material.TOVAR_ID}}]" value="{{material.TOVAR_NAME}}">
+							<div class="checkbox__checkmark checkbox--noborder checkbox--list-item__checkmark"></div>
+							<span style="font-size: 10px; line-height: 15px">{{ material.TOVAR_NAME }}</span><br>
+							<input ng-model="qty" ng-change="addMaterial(material.TOVAR_NAME, qty)" type="text" class="text-input" style="margin-left: 30px; width: 70px" name="materialCount[{{material.TOVAR_ID}}]" placeholder="{{biocard.t('Quantity')}}" value="">&nbsp;
+							{{biocard.t('of')}}&nbsp;
+							{{ material.TOVAR_BOX_T }}
+						</label>
+					</li>
+				</ul>
+			</li>
+			<li class="list__item">
+				<textarea class="textarea textarea--transparent" rows="4" placeholder="{{biocard.t('comments')}}" ng-model="request.comments"></textarea>
+			</li>
+		</ul>
+		<div style="padding: 10px">
+			<button class="button button--large" ng-click="addRequest()" ng-disabled="!request.projectNumber || !companyId || !request.materialNames.length">
+				{{biocard.t('Add request')}}
+			</button>
+		</div>
+	</div>
+
+	<div ng-show="tabs.return">
+		<ul class="list">
+			<li class="list__item" style="padding: 20px 0">
+				<label class="small label--list">{{biocard.t('projectNumber')}}</label>
+
+
+				<ul class="list list--inset">
+					<li ng-repeat="study in studies" ng-click="selectStudy(study.STUDY_ID)" class="list__item list__item--tappable list--inset__item">
+						<label class="radio-button radio-button--list-item">
+							<input type="radio" name="study_id" value="{{ study.STUDY_ID }}" ng-model="return.studyId">
+							<div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+							{{ study.STUDY_NUMBER}}
+						</label>
+					</li>
+
+				</ul>
+				<!--input type="text" class="text-input text-input--transparent" placeholder="{{biocard.t('projectNumber')}}" ng-model="request.projectNumber" value="" style="width:100%"-->
+			</li>
+			<li ng-show="studyId" class="list__item" style="padding: 20px 0">
+				<!--input type="text" class="text-input text-input--transparent" placeholder="{{biocard.t('siteNo')}}" ng-model="request.siteNo" value="" style="width:100%"-->
+				<label class="small label--list">{{biocard.t('siteNo')}}</label>
+
+				<ul class="list list--inset">
+					<li ng-repeat="company in companies" class="list__item list__item--tappable list--inset__item">
+						<label class="radio-button radio-button--list-item">
+							<input type="radio" name="company" value="{{ company.COMPANY_ID}}" ng-model="return.companyId">
+							<div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+							{{ company.COMPANY_SITE }}
+						</label>
+					</li>
+				</ul>
+			</li>
+			<li class="list__item" style="padding: 20px 0">
+				<label class="small label--list">{{biocard.t('returnDate')}}</label>
+				<input type="date" class="text-input text-input--transparent" placeholder="{{biocard.t('returnDate')}}" ng-model="return.date" value="" style="width:100%">
+			</li>
+			<li class="list__item">
+				<textarea class="textarea textarea--transparent" rows="4" placeholder="{{biocard.t('comments')}}" ng-model="return.comments"></textarea>
+			</li>
+		</ul>
+		<div style="padding: 10px">
+			<button class="button button--large" ng-click="addReturn()" ng-disabled="!return.studyId || !return.companyId || !return.date">
+				{{biocard.t('Add return')}}
+			</button>
+		</div>
+	</div>
+
+
+</ons-page>

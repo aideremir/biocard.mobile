@@ -8,7 +8,7 @@ module.controller('loginController', function ($scope, $http) {
 
         $scope.biocard = biocard;
 
-        console.log(navigator.globalization);
+        //console.log(navigator.globalization);
 
         $scope.loginPage = {
 
@@ -27,6 +27,7 @@ module.controller('loginController', function ($scope, $http) {
                 localStorage.removeItem('password');
                 localStorage.removeItem('name');
                 localStorage.removeItem('company');
+                localStorage.removeItem('userId');
 
             },
             userLogin: function () {
@@ -36,6 +37,59 @@ module.controller('loginController', function ($scope, $http) {
 
                 modal.show();
 
+                if(login.slice(-2) == '_r')
+                {
+                    $http.get('http://biocard.com/requestApi.php?cmd=auth&login=' + login + '&password=' + password).
+                        success(function (data, status, headers, config) {
+
+
+                            if (data.length == 0) {
+
+                                ons.notification.alert({
+                                    message: 'Wrong login or password',
+                                    title: 'Error',
+                                    buttonLabel: 'OK',
+                                    animation: 'default'
+                                });
+                            }
+                            else {
+
+                                data = data[0];
+
+                                localStorage.setItem('login', login);
+                                localStorage.setItem('password', password);
+                                localStorage.setItem('name', data.REMOTEUSERS_FIO);
+                                localStorage.setItem('userId', data.REMOTEUSERS_ID);
+                                //localStorage.setItem('company', data.company);
+
+                                biocard.login = login;
+                                biocard.password = password;
+                                biocard.name = data.REMOTEUSERS_FIO;
+                                biocard.userId = data.REMOTEUSERS_ID;
+                                //biocard.company = data.company;
+
+                                menu.setMainPage('pages/request.html', {closeMenu: true});
+
+                            }
+
+                            modal.hide();
+                        }).
+                        error(function (data, status, headers, config) {
+
+                            //console.log(data, status);
+
+                            ons.notification.alert({
+                                messageHTML: biocard.t('Wrong login'),
+                                title: 'Error',
+                                buttonLabel: 'OK',
+                                animation: 'default'
+                            });
+
+                            modal.hide();
+                        });
+
+                    return true;
+                }
 
                 $http.get('http://cabinet.biocard.com/api/user?courierLogin=' + login + '&courierPassword=' + password).
                     success(function (data, status, headers, config) {
