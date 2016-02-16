@@ -90,6 +90,18 @@ var dict = {
     MEST: {ru: 'Мест', en: 'PLACES'},
     VES: {ru: 'Вес', en: 'WEIGHT'},
 
+    'Number': {ru: 'Номер', en: 'Number'},
+    'Customcode': {ru: 'Таможенный код', en: 'Customcode'},
+    'Routine': {ru: 'Рутина', en: 'Routine'},
+    'Received': {ru: 'Получен', en: 'Received'},
+    'Released': {ru: 'Выпущен', en: 'Released'},
+    'Added': {ru: 'Добавлен', en: 'Added'},
+    'Registered': {ru: 'Зарегистрирован', en: 'Registered'},
+    'Participant': {ru: 'Участник', en: 'Participant'},
+    'Message': {ru: 'Сообщение', en: 'Message'},
+    'Warn message': {ru: 'Предупреждение', en: 'Warn message'},
+    'Avia waybill': {ru: 'Авианакладная', en: 'Avia waybill'},
+
 
     'Wrong login': {ru: 'Неправильный логин или пароль', en: 'Wrong login or password'},
 
