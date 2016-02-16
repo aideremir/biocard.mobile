@@ -13,6 +13,7 @@ module.controller('customsMonitorDetailsController', function ($scope, $http) {
         $scope.order = order;
 
 
+
         modal.show();
         $http.get('http://cabinet.biocard.com/api/customs-monitor.html?guid=' + order.guid +'&servsql=1').
             success(function (data, status) {
