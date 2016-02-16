@@ -55,65 +55,71 @@
 		</div>
 
 		<ul ng-show="searchMatch(searchQueryReceived, order)" class="list list--inset" ng-repeat="order in projects.Received" style="margin-bottom: 10px">
-			<li  ng-repeat="(key, value) in order" class="list__item list__item--inset">
-				<label class="small">{{ key }}</label>
-					{{ value }}
+			<li  ng-repeat="(key, value) in order" ng-if="key != 'TOVAR_ID'" class="list__item list__item--inset">
+				<label class="small">{{ biocard.t(key) }}</label>
+				<span  ng-if="value != '0000-00-00'">{{ value }}</span>
+				<span  ng-if="value == '0000-00-00'">n/a</span>
 			</li>
 		</ul>
 
 	</div>
 	<div ng-show="tabs.stock">
 		<div style="padding: 10px">
-			<input ng-model="searchQueryStock" type="search" class="search-input" placeholder="Search..." >
+			<input ng-model="searchQueryStock" type="search" class="search-input" placeholder="{{biocard.t('Search')}}..." >
 		</div>
 		<ul ng-show="searchMatch(searchQueryStock, order)" class="list list--inset" ng-repeat="order in projects.Stock" style="margin-bottom: 10px">
-			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
-				<label class="small">{{ key }}</label>
-				{{ value }}
+			<li ng-repeat="(key, value) in order" ng-if="key != 'TOVAR_ID'" class="list__item list__item--inset">
+				<label class="small">{{ biocard.t(key) }}</label>
+				<span  ng-if="value != '0000-00-00'">{{ value }}</span>
+				<span  ng-if="value == '0000-00-00'">n/a</span>
 			</li>
 		</ul>
 	</div>
 	<div ng-show="tabs.relabel">
 		<div style="padding: 10px">
-			<input ng-model="searchQueryRelabel" type="search" class="search-input" placeholder="Search..." >
+			<input ng-model="searchQueryRelabel" type="search" class="search-input" placeholder="{{biocard.t('Search')}}..." >
 		</div>
 		<ul ng-show="searchMatch(searchQueryRelabel, order)" class="list list--inset" ng-repeat="order in projects.ReLabelling" style="margin-bottom: 10px">
-			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
-				<label class="small">{{ key }}</label>
-				{{ value }}
+			<li ng-repeat="(key, value) in order" ng-if="key != 'TOVAR_ID'" class="list__item list__item--inset">
+				<label class="small">{{ biocard.t(key) }}</label>
+				<span  ng-if="value != '0000-00-00'">{{ value }}</span>
+				<span  ng-if="value == '0000-00-00'">n/a</span>
 			</li>
 		</ul>
 	</div>
 	<div ng-show="tabs.dispatch">
 		<div style="padding: 10px">
-			<input ng-model="searchQueryDispatch" type="search" class="search-input" placeholder="Search..." >
+			<input ng-model="searchQueryDispatch" type="search" class="search-input" placeholder="{{biocard.t('Search')}}..." >
 		</div>
 		<ul ng-show="searchMatch(searchQueryDispatch, order)" class="list list--inset" ng-repeat="order in projects.Dispatch" style="margin-bottom: 10px">
-			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
-				<label class="small">{{ key }}</label>
-				{{ value }}
+			<li ng-repeat="(key, value) in order" ng-if="key != 'TOVAR_ID'" class="list__item list__item--inset">
+				<label class="small">{{ biocard.t(key) }}</label>
+				<span  ng-if="value != '0000-00-00'">{{ value }}</span>
+				<span  ng-if="value == '0000-00-00'">n/a</span>
 			</li>
 		</ul>
 	</div>
 	<div ng-show="tabs.return">
 		<div style="padding: 10px">
-			<input ng-model="searchQueryReturn" type="search" class="search-input" placeholder="Search..." >
+			<input ng-model="searchQueryReturn" type="search" class="search-input" placeholder="{{biocard.t('Search')}}..." >
 		</div>
 		<ul ng-show="searchMatch(searchQueryReturn, order)" class="list list--inset" ng-repeat="order in projects.Return" style="margin-bottom: 10px">
-			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
-				<label class="small">{{ key }}</label>
-				{{ value }}
+			<li ng-repeat="(key, value) in order" ng-if="key != 'TOVAR_ID'" class="list__item list__item--inset">
+				<label class="small">{{ biocard.t(key) }}</label>
+				<span  ng-if="value != '0000-00-00'">{{ value }}</span>
+				<span  ng-if="value == '0000-00-00'">n/a</span>
 			</li>
 		</ul>
 	</div>
 	<div ng-show="tabs.destructed">
 		<div style="padding: 10px">
-			<input ng-model="searchQueryDestructed" type="search" class="search-input" placeholder="Search..." >
+			<input ng-model="searchQueryDestructed" type="search" class="search-input" placeholder="{{biocard.t('Search')}}..." >
 		</div>
 		<ul ng-show="searchMatch(searchQueryDestructed, order)" class="list list--inset" ng-repeat="order in projects.Destructed" style="margin-bottom: 10px">
-			<li ng-repeat="(key, value) in order" class="list__item list__item--inset">
-				<label class="small">{{ key }}</label>
-				{{ value }}
+			<li ng-repeat="(key, value) in order" ng-if="key != 'TOVAR_ID'" class="list__item list__item--inset">
+				<label class="small">{{ biocard.t(key) }}</label>
+				<span  ng-if="value != '0000-00-00'">{{ value }}</span>
+				<span  ng-if="value == '0000-00-00'">n/a</span>
 			</li>
 		</ul>
 	</div>

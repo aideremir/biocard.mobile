@@ -101,7 +101,21 @@ var dict = {
     'Message': {ru: 'Сообщение', en: 'Message'},
     'Warn message': {ru: 'Предупреждение', en: 'Warn message'},
     'Avia waybill': {ru: 'Авианакладная', en: 'Avia waybill'},
+    'COURIERWAYBILL': {ru: 'Авианакладная', en: 'Avia waybill'},
 
+    'ITEM': {ru: 'Единица', en: 'ITEM'},
+    'BATCH': {ru: 'Партия', en: 'BATCH'},
+    'EXDATE': {ru: 'Ex дата', en: 'EXDATE'},
+    'UNDISPATCHED': {ru: 'Необработанные', en: 'UNDISPATCHED'},
+    'QUARANTINED': {ru: 'Каратнин', en: 'QUARANTINED'},
+    'RETURNED': {ru: 'Возвращены', en: 'RETURNED'},
+    'OLDEXPDATE': {ru: 'Старая EX дата', en: 'OLDEXPDATE'},
+    'NEWEXPDATE': {ru: 'Новая EX дата', en: 'NEWEXPDATE'},
+    'RELABELED': {ru: 'Перемаркирован', en: 'RELABELED'},
+    'DESTRUCT': {ru: 'Поврежден', en: 'DESTRUCT'},
+    'DESTRUCTED': {ru: 'Поврежден', en: 'DESTRUCTED'},
+    'QUANTITY': {ru: 'Мест', en: 'QUANTITY'},
+    'Tovar_Name': {ru: 'Описание', en: 'Description'},
 
     'Wrong login': {ru: 'Неправильный логин или пароль', en: 'Wrong login or password'},
 
