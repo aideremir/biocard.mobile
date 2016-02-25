@@ -70,7 +70,7 @@ var dict = {
     Receiver: {ru: 'Получатель', en: 'Receiver'},
     kg: {ru: 'кг', en: 'kg'},
 
-    'Documents submission': {ru: 'Отправка документов', en: 'Documents submission'},
+    'Documents submission': {ru: 'Документы отправлены', en: 'Documents submission'},
     'Documents received': {ru: 'Документы получены', en: 'Documents received'},
     Map: {ru: 'Карта', en: 'Map'},
     List: {ru: 'Список', en: 'List'},
@@ -112,8 +112,8 @@ var dict = {
     'OLDEXPDATE': {ru: 'Старая EX дата', en: 'OLDEXPDATE'},
     'NEWEXPDATE': {ru: 'Новая EX дата', en: 'NEWEXPDATE'},
     'RELABELED': {ru: 'Перемаркирован', en: 'RELABELED'},
-    'DESTRUCT': {ru: 'Поврежден', en: 'DESTRUCT'},
-    'DESTRUCTED': {ru: 'Поврежден', en: 'DESTRUCTED'},
+    'DESTRUCT': {ru: 'Уничтожен', en: 'DESTRUCT'},
+    'DESTRUCTED': {ru: 'Уничтожен', en: 'DESTRUCTED'},
     'QUANTITY': {ru: 'Мест', en: 'QUANTITY'},
     'Tovar_Name': {ru: 'Описание', en: 'Description'},
 

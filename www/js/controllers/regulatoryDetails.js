@@ -12,6 +12,8 @@ module.controller('regulatoryDetailsController', function ($scope, $http) {
 
         $scope.order = order;
 
+        console.log(order);
+
     });
 
 });

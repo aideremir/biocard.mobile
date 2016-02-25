@@ -11,31 +11,49 @@
 
 
 	<ons-list class="propsList">
+
 		<ons-list-item>
-			<label class="small">{{biocard.t('added')}}</label>
-			{{ order.datetime_added }}
+			<label class="small">{{biocard.t('Customcode')}}</label>
+			{{ order.customcode }}
+		</ons-list-item>
+		<ons-list-item>
+			<label class="small">{{biocard.t('Routine')}}</label>
+			{{ order.routine }}
 		</ons-list-item>
 		<ons-list-item>
 			<label class="small">{{biocard.t('received')}}</label>
 			{{ order.datetime_received }}
 		</ons-list-item>
 		<ons-list-item>
-			<label class="small">{{biocard.t('registered')}}</label>
-			{{ order.datetime_registered }}
-		</ons-list-item>
-		<ons-list-item>
 			<label class="small">{{biocard.t('released')}}</label>
 			{{ order.datetime_released }}
 		</ons-list-item>
-
 		<ons-list-item>
-			<label class="small">{{biocard.t('declarer')}}</label>
-			{{ order.declarer }}
+			<label class="small">{{biocard.t('added')}}</label>
+			{{ order.datetime_added }}
+		</ons-list-item>
+		<ons-list-item>
+			<label class="small">{{biocard.t('registered')}}</label>
+			{{ order.datetime_registered }}
 		</ons-list-item>
 		<ons-list-item>
 			<label class="small">{{biocard.t('participant')}}</label>
 			{{ order.participant }}
 		</ons-list-item>
+		<ons-list-item>
+			<label class="small">{{biocard.t('Message')}}</label>
+			{{ order.message.text }}
+		</ons-list-item>
+		<ons-list-item>
+			<label class="small">{{biocard.t('Warn message')}}</label>
+			{{ order.warnmes }}
+		</ons-list-item>
+
+		<!--ons-list-item>
+			<label class="small">{{biocard.t('declarer')}}</label>
+			{{ order.declarer }}
+		</ons-list-item>
+
 		<ons-list-item>
 			<label class="small">{{biocard.t('Inspector')}}</label>
 			{{ orderDetails.inspector }}
@@ -43,15 +61,12 @@
 		<ons-list-item>
 			<label class="small">{{biocard.t('Grafa 30')}}</label>
 			{{ orderDetails.gr30 }}
-		</ons-list-item>
+		</ons-list-item-->
 		<ons-list-item>
 			<label class="small">{{biocard.t('Avia waybill')}}</label>
 			{{ order['02017'] }}
 		</ons-list-item>
-		<ons-list-item>
 
-			{{ order.warnmes }}
-		</ons-list-item>
 
 
 		<li class="list__header">{{biocard.t('Products')}}</li>
