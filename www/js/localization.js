@@ -26,7 +26,7 @@ var dict = {
     'Dispatch': {ru: 'Отправка', en: 'Dispatch'},
     'Relabel': {ru: 'Перемарк', en: 'Relabel'},
     'Return': {ru: 'Возврат', en: 'Return'},
-    'Destructed': {ru: 'Поврежд', en: 'Destructed'},
+    'Destructed': {ru: 'Уничтож', en: 'Destructed'},
 
     'City from': {ru: 'Город отправителя', en: 'City from'},
     'City to': {ru: 'Город получателя', en: 'City to'},
